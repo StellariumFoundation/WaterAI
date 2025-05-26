@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Python Web Interpreter</title>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.27.6/full/pyodide.js"></script>
+</head>
+<body>
+    <h1>Python Web Interpreter</h1>
+    <textarea id="python-code"></textarea>
+    <button id="run-button">Run Python Code</button>
+    <pre id="output-area"></pre>
+
+    <h2>Actions</h2>
+
+    <div>
+        <label for="text-input-for-word-count">Text for Word Count:</label>
+        <input type="text" id="text-input-for-word-count">
+        <button id="word-count-button">Count Words</button>
+        <span id="action-result-display"></span>
+    </div>
+
+    <div>
+        <label for="text-input-for-add-paragraph">Text for New Paragraph:</label>
+        <input type="text" id="text-input-for-add-paragraph">
+        <button id="add-paragraph-button">Add Paragraph to Output Area</button>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
