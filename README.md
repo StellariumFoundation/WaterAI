@@ -158,6 +158,8 @@ To set up and run this project, follow these steps:
 
 Core components are envisioned as open-source (e.g., Apache 2.0, MIT license) to foster transparency, trust, community contribution, and rapid adoption, aligning with the "gift for humanity" philosophy. This will be balanced with sustainable monetization. Community engagement via GitHub, forums, and clear contribution guidelines.
 
+This project, Water AI, builds upon the foundations laid by the "Ii agent" project (https://github.com/Intelligent-Internet/ii-agent). The "Ii agent" project is also open-sourced under the Apache License 2.0. We gratefully acknowledge the work of the "Ii agent" contributors.
+
 **10. Business Model: Sustainable Impact & Growth**
 
 Water AI is envisioned as a gift to humanity, with a sustainable model that balances accessibility with operational sustainability. Our approach ensures the platform can grow while remaining true to its mission of democratizing advanced AI capabilities.
