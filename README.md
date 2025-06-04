@@ -109,6 +109,51 @@ A robust architecture featuring client-side components (UI, WebAssembly for loca
 *   **Scalability & Reliability:** Designed for horizontal scaling, asynchronous processing, fault tolerance.
 *(A high-level system diagram from the previous document would be referenced or included.)*
 
+**## Setup and Running the Project**
+
+To set up and run this project, follow these steps:
+
+1.  **Clone the repository:**
+    ```bash
+    git clone <repository_url>
+    cd <repository_directory>
+    ```
+
+2.  **Create and activate a virtual environment (recommended):**
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+
+3.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4.  **Set up Environment Variables:**
+    The application uses environment variables for configuration, particularly for connecting to LLM services. Refer to the `RUNNING_WITH_LOCAL_MODELS.md` guide for detailed instructions on setting up environment variables like `OPENAI_BASE_URL` and `OPENAI_API_KEY` if you plan to use a local model with LMStudio. For other LLM providers, set the appropriate API keys and endpoints as environment variables according_to_their_documentation. You might need to create a `.env` file in the root directory to store these variables (e.g., `OPENAI_API_KEY=your_api_key_here`).
+
+5.  **Running the Command-Line Interface (CLI):**
+    The `cli.py` script allows you to interact with the agent directly from your terminal.
+    ```bash
+    python cli.py --prompt "Your instruction to the agent"
+    ```
+    For more options, run:
+    ```bash
+    python cli.py --help
+    ```
+
+6.  **Running the WebSocket Server (for Web UI):**
+    The `ws_server.py` script starts a WebSocket server, which can be used by a frontend application to interact with the agent.
+    ```bash
+    python ws_server.py
+    ```
+    By default, the server runs on `0.0.0.0:8000`. You can customize the host and port using command-line arguments:
+    ```bash
+    python ws_server.py --host 127.0.0.1 --port 8080
+    ```
+    Refer to `python ws_server.py --help` for more options.
+
 **9. Open Source Strategy**
 
 Core components are envisioned as open-source (e.g., Apache 2.0, MIT license) to foster transparency, trust, community contribution, and rapid adoption, aligning with the "gift for humanity" philosophy. This will be balanced with sustainable monetization. Community engagement via GitHub, forums, and clear contribution guidelines.

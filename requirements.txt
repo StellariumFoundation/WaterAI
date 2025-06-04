@@ -1,0 +1,6 @@
+python-dotenv
+rich
+uvicorn
+fastapi
+anyio
+sqlalchemy
