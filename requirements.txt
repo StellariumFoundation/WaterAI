@@ -16,3 +16,11 @@ Pillow
 pexpect
 playwright
 tenacity
+starlette
+pydantic
+pydantic-core
+typing-extensions
+typing-inspection
+annotated-types
+sniffio
+exceptiongroup
