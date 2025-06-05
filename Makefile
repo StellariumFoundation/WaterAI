@@ -8,4 +8,4 @@ build:
 
 test:
 	@echo "Activating virtual environment and running tests..."
-	@source .venv/bin/activate && python -m unittest discover tests
+	@. .venv/bin/activate && python -m unittest discover tests
