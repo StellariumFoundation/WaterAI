@@ -3,27 +3,26 @@ import asyncio
 import logging
 from copy import deepcopy
 from typing import Optional, List, Dict, Any
-from ii_agent.llm.base import LLMClient
-from ii_agent.llm.context_manager.llm_summarizing import LLMSummarizingContextManager
-from ii_agent.llm.token_counter import TokenCounter
-from ii_agent.tools.advanced_tools.image_search_tool import ImageSearchTool
-from ii_agent.tools.base import LLMTool
-from ii_agent.llm.message_history import ToolCallParameters
-from ii_agent.tools.memory.compactify_memory import CompactifyMemoryTool
-from ii_agent.tools.memory.simple_memory import SimpleMemoryTool
-from ii_agent.tools.slide_deck_tool import SlideDeckInitTool, SlideDeckCompleteTool
-from ii_agent.tools.web_search_tool import WebSearchTool
-from ii_agent.tools.visit_webpage_tool import VisitWebpageTool
-from ii_agent.tools.str_replace_tool_relative import StrReplaceEditorTool
-from ii_agent.tools.static_deploy_tool import StaticDeployTool
-from ii_agent.tools.sequential_thinking_tool import SequentialThinkingTool
-from ii_agent.tools.message_tool import MessageTool
-from ii_agent.tools.complete_tool import CompleteTool, ReturnControlToUserTool
-from ii_agent.tools.bash_tool import create_bash_tool, create_docker_bash_tool
-from ii_agent.browser.browser import Browser
-from ii_agent.utils import WorkspaceManager
-from ii_agent.llm.message_history import MessageHistory
-from ii_agent.tools.browser_tools import (
+from llm.base import LLMClient
+from llm.context_manager.llm_summarizing import LLMSummarizingContextManager
+from llm.token_counter import TokenCounter
+from .advanced_tools.image_search_tool import ImageSearchTool
+from .base import LLMTool
+from llm.message_history import ToolCallParameters, MessageHistory
+from .memory.compactify_memory import CompactifyMemoryTool
+from .memory.simple_memory import SimpleMemoryTool
+from .slide_deck_tool import SlideDeckInitTool, SlideDeckCompleteTool
+from .web_search_tool import WebSearchTool
+from .visit_webpage_tool import VisitWebpageTool
+from .str_replace_tool_relative import StrReplaceEditorTool
+from .static_deploy_tool import StaticDeployTool
+from .sequential_thinking_tool import SequentialThinkingTool
+from .message_tool import MessageTool
+from .complete_tool import CompleteTool, ReturnControlToUserTool
+from .bash_tool import create_bash_tool, create_docker_bash_tool
+from browser.browser import Browser
+from utils import WorkspaceManager
+from .browser_tools import (
     BrowserNavigationTool,
     BrowserRestartTool,
     BrowserScrollDownTool,
@@ -38,16 +37,16 @@ from ii_agent.tools.browser_tools import (
     BrowserGetSelectOptionsTool,
     BrowserSelectDropdownOptionTool,
 )
-from ii_agent.tools.visualizer import DisplayImageTool
-from ii_agent.tools.advanced_tools.audio_tool import (
+from .visualizer import DisplayImageTool
+from .advanced_tools.audio_tool import (
     AudioTranscribeTool,
     AudioGenerateTool,
 )
-from ii_agent.tools.advanced_tools.video_gen_tool import VideoGenerateFromTextTool
-from ii_agent.tools.advanced_tools.image_gen_tool import ImageGenerateTool
-from ii_agent.tools.advanced_tools.pdf_tool import PdfTextExtractTool
-from ii_agent.tools.deep_research_tool import DeepResearchTool
-from ii_agent.tools.list_html_links_tool import ListHtmlLinksTool
+from .advanced_tools.video_gen_tool import VideoGenerateFromTextTool
+from .advanced_tools.image_gen_tool import ImageGenerateTool
+from .advanced_tools.pdf_tool import PdfTextExtractTool
+from .deep_research_tool import DeepResearchTool
+from .list_html_links_tool import ListHtmlLinksTool
 
 
 def get_system_tools(

@@ -15,8 +15,8 @@ import pexpect
 import re
 from abc import ABC, abstractmethod
 
-from ii_agent.llm.message_history import MessageHistory
-from ii_agent.tools.base import LLMTool, ToolImplOutput
+from llm.message_history import MessageHistory
+from .base import LLMTool, ToolImplOutput
 
 
 def start_persistent_shell(timeout: int):

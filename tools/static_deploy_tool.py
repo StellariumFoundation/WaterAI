@@ -2,12 +2,12 @@ from typing import Any, Optional
 from pathlib import Path
 import os
 
-from ii_agent.tools.base import (
+from .base import (
     ToolImplOutput,
     LLMTool,
 )
-from ii_agent.llm.message_history import MessageHistory
-from ii_agent.utils import WorkspaceManager
+from llm.message_history import MessageHistory
+from utils.workspace_manager import WorkspaceManager
 
 
 class StaticDeployTool(LLMTool):

@@ -1,8 +1,8 @@
 """Tool for indicating task completion."""
 
 from typing import Any, Optional
-from ii_agent.llm.message_history import MessageHistory
-from ii_agent.tools.base import LLMTool, ToolImplOutput
+from llm.message_history import MessageHistory
+from .base import LLMTool, ToolImplOutput
 
 
 class CompleteTool(LLMTool):

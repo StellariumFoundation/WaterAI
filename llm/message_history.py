@@ -1,6 +1,6 @@
 import json
 from typing import Optional, cast, Any
-from ii_agent.llm.base import (
+from .base import (
     AssistantContentBlock,
     GeneralContentBlock,
     LLMMessages,
@@ -11,7 +11,7 @@ from ii_agent.llm.base import (
     ToolFormattedResult,
     ImageBlock,
 )
-from ii_agent.llm.context_manager.base import ContextManager
+from .context_manager.base import ContextManager
 
 
 class MessageHistory:
