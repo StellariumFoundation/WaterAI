@@ -113,22 +113,20 @@ A robust architecture featuring client-side components (UI, WebAssembly for loca
 
 To set up and run this project, follow these steps:
 
-1.  **Clone the repository:**
+1.  **Ensure `uv` is installed.** If not, follow the installation instructions at https://github.com/astral-sh/uv.
+
+2.  **Clone the repository (if you haven't already):**
     ```bash
     git clone <repository_url>
     cd <repository_directory>
     ```
 
-2.  **Create and activate a virtual environment (recommended):**
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-    ```
-
-3.  **Install dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
+3.  **Run `make build` to set up the project's virtual environment and install dependencies using uv.**
+    This command will:
+    * Verify `uv` is installed (or prompt you to install it).
+    * Create a virtual environment named `.venv` if it doesn't exist.
+    * Install dependencies from `requirements.txt` into the virtual environment.
+    *Note: Ensure you are in the root directory of the cloned repository when running this command.*
 
 4.  **Set up Environment Variables:**
     The application uses environment variables for configuration, particularly for connecting to LLM services. Refer to the `RUNNING_WITH_LOCAL_MODELS.md` guide for detailed instructions on setting up environment variables like `OPENAI_BASE_URL` and `OPENAI_API_KEY` if you plan to use a local model with LMStudio. For other LLM providers, set the appropriate API keys and endpoints as environment variables according_to_their_documentation. You might need to create a `.env` file in the root directory to store these variables (e.g., `OPENAI_API_KEY=your_api_key_here`).
