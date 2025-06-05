@@ -1,4 +1,4 @@
-from ii_agent.tools.base import ToolImplOutput
+from ..base import ToolImplOutput
 
 
 def format_screenshot_tool_output(screenshot: str, msg: str) -> ToolImplOutput:

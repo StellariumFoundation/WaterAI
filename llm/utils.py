@@ -1,4 +1,4 @@
-from ii_agent.llm.base import (
+from .base import (
     GeneralContentBlock,
     LLMMessages,
     TextPrompt,

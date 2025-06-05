@@ -4,8 +4,8 @@ import uuid
 from pathlib import Path
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, Session as DBSession
-from ii_agent.db.models import Base, Session, Event
-from ii_agent.core.event import EventType, RealtimeEvent
+from .models import Base, Session, Event
+from core.event import EventType, RealtimeEvent
 
 
 class DatabaseManager:

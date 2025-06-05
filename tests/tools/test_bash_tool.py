@@ -34,7 +34,7 @@ def test_successful_command():
         workspace_root=Path("/tmp"),
         require_confirmation=False,
     )
-    with patch("ii_agent.tools.bash_tool.run_command") as mock_run_command:
+    with patch("tools.bash_tool.run_command") as mock_run_command:
         # Mock a successful command execution
         mock_run_command.return_value = "Command output"
 
@@ -55,7 +55,7 @@ def test_failed_command():
         workspace_root=Path("/tmp"),
         require_confirmation=False,
     )
-    with patch("ii_agent.tools.bash_tool.run_command") as mock_run_command:
+    with patch("tools.bash_tool.run_command") as mock_run_command:
         # Mock a failed command execution that raises an exception
         mock_run_command.side_effect = Exception("Command failed")
 
@@ -80,7 +80,7 @@ def test_command_with_exception():
         workspace_root=Path("/tmp"),
         require_confirmation=False,
     )
-    with patch("ii_agent.tools.bash_tool.run_command") as mock_run_command:
+    with patch("tools.bash_tool.run_command") as mock_run_command:
         # Mock an exception during command execution
         mock_run_command.side_effect = Exception("Test exception")
 
@@ -177,11 +177,11 @@ class BashToolTest(unittest.TestCase):
 
         # Create patches
         self.start_shell_patch = patch(
-            "ii_agent.tools.bash_tool.start_persistent_shell",
+            "tools.bash_tool.start_persistent_shell",
             return_value=(self.mock_child, self.mock_prompt),
         )
         self.run_command_patch = patch(
-            "ii_agent.tools.bash_tool.run_command",
+            "tools.bash_tool.run_command",
             return_value="command output",
         )
 
@@ -390,7 +390,7 @@ class BashToolTest(unittest.TestCase):
     def test_create_bash_tool(self):
         """Test the create_bash_tool factory function."""
 
-        with patch("ii_agent.tools.bash_tool.BashTool") as mock_bash_tool:
+        with patch("tools.bash_tool.BashTool") as mock_bash_tool:
             _ = create_bash_tool(
                 ask_user_permission=True,
                 cwd=self.workspace_root,
@@ -431,7 +431,7 @@ class RunCommandTest(unittest.TestCase):
 class StartPersistentShellTest(unittest.TestCase):
     """Tests for the start_persistent_shell function."""
 
-    @patch("ii_agent.tools.bash_tool.pexpect.spawn")
+    @patch("tools.bash_tool.pexpect.spawn")
     def test_start_persistent_shell(self, mock_spawn):
         """Test the start_persistent_shell function."""
         # Create a mock child process

@@ -1,10 +1,11 @@
 import json
 
 from typing import Any, Optional
-from ii_agent.browser.browser import Browser
-from ii_agent.tools.base import ToolImplOutput
-from ii_agent.tools.browser_tools import BrowserTool, utils
-from ii_agent.llm.message_history import MessageHistory
+from browser.browser import Browser
+from ..base import ToolImplOutput
+from .base import BrowserTool
+from . import utils
+from llm.message_history import MessageHistory
 
 
 class BrowserGetSelectOptionsTool(BrowserTool):

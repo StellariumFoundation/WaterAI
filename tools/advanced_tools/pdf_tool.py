@@ -2,12 +2,12 @@ from pathlib import Path
 from typing import Any, Optional
 import pymupdf
 
-from ii_agent.llm.message_history import MessageHistory
-from ii_agent.tools.base import (
+from llm.message_history import MessageHistory
+from ..base import (
     LLMTool,
     ToolImplOutput,
 )
-from ii_agent.utils import WorkspaceManager
+from utils import WorkspaceManager
 
 
 class PdfTextExtractTool(LLMTool):

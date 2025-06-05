@@ -11,12 +11,12 @@ from google.genai import types
 from google.cloud import storage
 from google.auth.exceptions import DefaultCredentialsError
 
-from ii_agent.tools.base import (
+from ..base import (
     MessageHistory,
     LLMTool,
     ToolImplOutput,
 )
-from ii_agent.utils import WorkspaceManager
+from utils import WorkspaceManager
 
 GCP_PROJECT_ID = os.environ.get("GOOGLE_CLOUD_PROJECT")
 GCP_LOCATION = os.environ.get("GOOGLE_CLOUD_REGION")
@@ -488,7 +488,7 @@ The generated video will be saved to the specified local path in the workspace."
 
 
 if __name__ == "__main__":
-    from ii_agent.utils import WorkspaceManager
+    from utils import WorkspaceManager
 
     workspace_manager = WorkspaceManager(root="workspace")
     tool = VideoGenerateFromTextTool(workspace_manager)
