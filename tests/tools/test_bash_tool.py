@@ -10,8 +10,8 @@ import unittest
 from unittest.mock import patch, MagicMock
 
 
-from ii_agent.tools.base import ToolImplOutput
-from ii_agent.tools.bash_tool import (
+from tools.base import ToolImplOutput
+from tools.bash_tool import (
     BashTool,
     CommandFilter,
     DockerCommandFilter,
