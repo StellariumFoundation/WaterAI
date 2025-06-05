@@ -35,7 +35,6 @@ class InteractiveElement(BaseModel):
 
     model_config = ConfigDict(
         alias_generator=to_camel,
-        populate_by_name=True,
         from_attributes=True,
     )
 
@@ -66,7 +65,6 @@ class Viewport(BaseModel):
 
     model_config = ConfigDict(
         alias_generator=to_camel,
-        populate_by_name=True,
         from_attributes=True,
     )
 
