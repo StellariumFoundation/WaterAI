@@ -55,3 +55,4 @@ google-api-python-client
 uritemplate
 attrs
 referencing
+rpds-py
