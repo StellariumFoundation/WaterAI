@@ -123,9 +123,8 @@ To set up and run this project, follow these steps:
 
 3.  **Run `make build` to set up the project's virtual environment and install dependencies using uv.**
     This command will:
-    * Verify `uv` is installed (or prompt you to install it).
-    * Create a virtual environment named `.venv` if it doesn't exist.
-    * Install dependencies from `requirements.txt` into the virtual environment.
+    * Create a virtual environment named `.venv` (or update it if it already exists).
+    * Install/sync dependencies from `requirements.txt` into the virtual environment using `uv pip sync`.
     *Note: Ensure you are in the root directory of the cloned repository when running this command.*
 
 4.  **Set up Environment Variables:**
