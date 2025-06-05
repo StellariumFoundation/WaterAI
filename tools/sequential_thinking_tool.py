@@ -12,8 +12,8 @@ import json
 import logging
 from typing import Any, Dict, List, Optional, TypedDict
 
-from ii_agent.llm.message_history import MessageHistory
-from ii_agent.tools.base import (
+from llm.message_history import MessageHistory
+from tools.base import (
     LLMTool,
     ToolImplOutput,
 )

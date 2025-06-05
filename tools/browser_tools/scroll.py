@@ -1,11 +1,11 @@
 import asyncio
 
 from typing import Any, Optional
-from ii_agent.tools.browser_tools import BrowserTool, utils
-from ii_agent.browser.browser import Browser
-from ii_agent.browser.utils import is_pdf_url
-from ii_agent.tools.base import ToolImplOutput
-from ii_agent.llm.message_history import MessageHistory
+from tools.browser_tools import BrowserTool, utils
+from browser.browser import Browser
+from browser.utils import is_pdf_url
+from tools.base import ToolImplOutput
+from llm.message_history import MessageHistory
 
 
 class BrowserScrollDownTool(BrowserTool):

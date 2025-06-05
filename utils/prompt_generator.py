@@ -1,8 +1,8 @@
 import logging
 from typing import List, Tuple, Optional
 
-from ii_agent.llm import get_client
-from ii_agent.llm.base import TextPrompt, TextResult, LLMClient
+from llm import get_client
+from llm.base import TextPrompt, TextResult, LLMClient
 
 # Create a logger
 logger = logging.getLogger("prompt_generator")

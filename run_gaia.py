@@ -21,12 +21,12 @@ from datasets import load_dataset, Dataset
 from huggingface_hub import snapshot_download
 import uuid
 import asyncio
-from ii_agent.db.models import Session, Event
-from ii_agent.agents.anthropic_fc import AnthropicFC
-from ii_agent.browser.browser import Browser
-from ii_agent.prompts.gaia_system_prompt import GAIA_SYSTEM_PROMPT
-from ii_agent.tools.bash_tool import BashTool
-from ii_agent.tools.browser_tools import (
+from db.models import Session, Event
+from agents.anthropic_fc import AnthropicFC
+from browser.browser import Browser
+from prompts.gaia_system_prompt import GAIA_SYSTEM_PROMPT
+from tools.bash_tool import BashTool
+from tools.browser_tools import (
     BrowserClickTool,
     BrowserEnterTextTool,
     BrowserGetSelectOptionsTool,
@@ -39,26 +39,26 @@ from ii_agent.tools.browser_tools import (
     BrowserViewTool,
     BrowserWaitTool,
 )
-from ii_agent.tools.advanced_tools.gemini import (
+from tools.advanced_tools.gemini import (
     AudioUnderstandingTool,
     AudioTranscribeTool,
     YoutubeVideoUnderstandingTool,
 )
-from ii_agent.tools.sequential_thinking_tool import SequentialThinkingTool
-from ii_agent.tools.str_replace_tool_relative import StrReplaceEditorTool
-from ii_agent.tools.text_inspector_tool import TextInspectorTool
-from ii_agent.tools.visit_webpage_tool import VisitWebpageTool
-from ii_agent.tools.visualizer import DisplayImageTool
-from ii_agent.tools.web_search_tool import WebSearchTool
-from ii_agent.utils import WorkspaceManager
-from ii_agent.llm import get_client
-from ii_agent.llm.context_manager.llm_summarizing import LLMSummarizingContextManager
-from ii_agent.llm.token_counter import TokenCounter
-from ii_agent.utils.constants import DEFAULT_MODEL, UPLOAD_FOLDER_NAME
+from tools.sequential_thinking_tool import SequentialThinkingTool
+from tools.str_replace_tool_relative import StrReplaceEditorTool
+from tools.text_inspector_tool import TextInspectorTool
+from tools.visit_webpage_tool import VisitWebpageTool
+from tools.visualizer import DisplayImageTool
+from tools.web_search_tool import WebSearchTool
+from utils import WorkspaceManager
+from llm import get_client
+from llm.context_manager.llm_summarizing import LLMSummarizingContextManager
+from llm.token_counter import TokenCounter
+from utils.constants import DEFAULT_MODEL, UPLOAD_FOLDER_NAME
 from utils import parse_common_args
-from ii_agent.db.manager import DatabaseManager
-from ii_agent.core.event import RealtimeEvent, EventType
-from ii_agent.tools.youtube_transcript_tool import YoutubeTranscriptTool
+from db.manager import DatabaseManager
+from core.event import RealtimeEvent, EventType
+from tools.youtube_transcript_tool import YoutubeTranscriptTool
 
 # Global lock for thread-safe file appending
 append_answer_lock = Lock()

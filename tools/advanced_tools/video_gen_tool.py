@@ -5,18 +5,18 @@ import uuid
 from pathlib import Path
 from typing import Any, Optional
 
-from google import genai
-from google.genai import types
+import google.generativeai as genai
+# types will be accessed via genai.types
 
 from google.cloud import storage
 from google.auth.exceptions import DefaultCredentialsError
 
-from ii_agent.tools.base import (
+from tools.base import (
     MessageHistory,
     LLMTool,
     ToolImplOutput,
 )
-from ii_agent.utils import WorkspaceManager
+from utils import WorkspaceManager
 
 GCP_PROJECT_ID = os.environ.get("GOOGLE_CLOUD_PROJECT")
 GCP_LOCATION = os.environ.get("GOOGLE_CLOUD_REGION")
@@ -189,7 +189,7 @@ The generated video will be saved to the specified local path in the workspace."
             operation = self.client.models.generate_videos(
                 model=self.video_model,
                 prompt=prompt,
-                config=types.GenerateVideosConfig(
+                config=genai.types.GenerateVideosConfig(
                     aspect_ratio=aspect_ratio,
                     output_gcs_uri=gcs_output_uri,  # Veo requires a GCS URI
                     number_of_videos=1,
@@ -206,35 +206,33 @@ The generated video will be saved to the specified local path in the workspace."
             max_wait_time_seconds = 600  # 10 minutes
             elapsed_time = 0
 
-            while not operation.done:
+            while not operation.done(): # Add ()
                 if elapsed_time >= max_wait_time_seconds:
-                    return ToolImplOutput(
-                        f"Error: Video generation timed out after {max_wait_time_seconds} seconds for prompt: {prompt}",
-                        "Video generation timed out.",
-                        {"success": False, "error": "Timeout"},
+                    # Changed to raise in turn 68, keeping that logic
+                    raise TimeoutError(
+                        f"Video generation timed out after {max_wait_time_seconds} seconds for prompt: {prompt}"
                     )
                 time.sleep(polling_interval_seconds)
                 elapsed_time += polling_interval_seconds
                 operation = self.client.operations.get(
-                    operation
+                    operation.name # Use operation.name
                 )  # Refresh operation status
                 # Optionally log operation.metadata or progress if available
 
             if operation.error:
-                return ToolImplOutput(
-                    f"Error generating video: {str(operation.error)}",
-                    "Video generation failed.",
-                    {"success": False, "error": str(operation.error)},
+                # Changed to raise in turn 68
+                raise Exception(
+                    f"Video generation API error: {operation.error.message}" # Access .message
                 )
 
-            if not operation.response or not operation.result.generated_videos:
-                return ToolImplOutput(
-                    f"Video generation completed but no video was returned for prompt: {prompt}",
-                    "No video returned from generation process.",
-                    {"success": False, "error": "No video output from API"},
+            result = operation.result() # Add ()
+            if not result or not result.generated_videos:
+                # Changed to raise in turn 68
+                raise Exception(
+                    f"Video generation completed but no video was returned for prompt: {prompt}"
                 )
 
-            generated_video_gcs_uri = operation.result.generated_videos[0].video.uri
+            generated_video_gcs_uri = result.generated_videos[0].video.uri
 
             # Download the video from GCS to the local workspace
             download_gcs_file(generated_video_gcs_uri, local_output_path)
@@ -392,8 +390,8 @@ The generated video will be saved to the specified local path in the workspace."
 
             generate_videos_kwargs = {
                 "model": self.video_model,
-                "image": types.Image(gcs_uri=temp_gcs_image_uri, mime_type=mime_type),
-                "config": types.GenerateVideosConfig(
+                "image": genai.types.Image(gcs_uri=temp_gcs_image_uri, mime_type=mime_type),
+                "config": genai.types.GenerateVideosConfig(
                     aspect_ratio=aspect_ratio,
                     output_gcs_uri=gcs_output_video_uri,
                     number_of_videos=1,
@@ -412,7 +410,7 @@ The generated video will be saved to the specified local path in the workspace."
             max_wait_time_seconds = 600
             elapsed_time = 0
 
-            while not operation.done:
+            while not operation.done(): # Add ()
                 if elapsed_time >= max_wait_time_seconds:
                     raise TimeoutError(
                         f"Video generation timed out after {max_wait_time_seconds} seconds."
@@ -420,19 +418,20 @@ The generated video will be saved to the specified local path in the workspace."
                 time.sleep(polling_interval_seconds)
                 elapsed_time += polling_interval_seconds
                 operation = self.genai_client.operations.get(
-                    operation
+                    operation.name # Use operation.name
                 )  # Use self.genai_client
 
             if operation.error:
                 raise Exception(
-                    f"Video generation API error: {operation.error.message}"
+                    f"Video generation API error: {operation.error.message}" # Access .message
                 )
 
-            if not operation.response or not operation.result.generated_videos:
+            result = operation.result() # Add ()
+            if not result or not result.generated_videos:
                 raise Exception("Video generation completed but no video was returned.")
 
             # The GCS URI of the *actual* generated video might differ slightly if Veo adds prefixes/folders
-            actual_generated_video_gcs_uri = operation.result.generated_videos[
+            actual_generated_video_gcs_uri = result.generated_videos[
                 0
             ].video.uri
             generated_video_gcs_uri_for_cleanup = (
@@ -488,7 +487,7 @@ The generated video will be saved to the specified local path in the workspace."
 
 
 if __name__ == "__main__":
-    from ii_agent.utils import WorkspaceManager
+    from utils import WorkspaceManager
 
     workspace_manager = WorkspaceManager(root="workspace")
     tool = VideoGenerateFromTextTool(workspace_manager)

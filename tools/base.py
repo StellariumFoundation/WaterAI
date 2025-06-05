@@ -6,10 +6,10 @@ import jsonschema
 from anthropic import BadRequestError
 from typing_extensions import final
 
-from ii_agent.llm.base import (
+from llm.base import (
     ToolParam,
 )
-from ii_agent.llm.message_history import MessageHistory
+from llm.message_history import MessageHistory
 
 ToolInputSchema = dict[str, Any]
 

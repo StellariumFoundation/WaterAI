@@ -1,8 +1,8 @@
 import logging
-from ii_agent.llm.base import GeneralContentBlock, TextPrompt, TextResult
-from ii_agent.llm.context_manager.base import ContextManager
-from ii_agent.llm.token_counter import TokenCounter
-from ii_agent.llm.base import LLMClient
+from llm.base import GeneralContentBlock, TextPrompt, TextResult
+from .base import ContextManager
+from llm.token_counter import TokenCounter
+from llm.base import LLMClient
 
 
 class LLMSummarizingContextManager(ContextManager):

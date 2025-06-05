@@ -1,7 +1,7 @@
-from ii_agent.llm.base import LLMClient
-from ii_agent.llm.openai import OpenAIDirectClient
-from ii_agent.llm.anthropic import AnthropicDirectClient
-from ii_agent.llm.gemini import GeminiDirectClient
+from .base import LLMClient
+from .openai import OpenAIDirectClient
+from .anthropic import AnthropicDirectClient
+from .gemini import GeminiDirectClient
 
 def get_client(client_name: str, **kwargs) -> LLMClient:
     """Get a client for a given client name."""

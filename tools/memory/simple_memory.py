@@ -1,6 +1,6 @@
 from typing import Any, Optional, Dict
-from ii_agent.llm.message_history import MessageHistory
-from ii_agent.tools.base import LLMTool, ToolImplOutput
+from llm.message_history import MessageHistory
+from tools.base import LLMTool, ToolImplOutput
 
 
 class SimpleMemoryTool(LLMTool):

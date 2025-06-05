@@ -7,7 +7,7 @@ from typing import List
 from urllib.parse import urlparse
 from PIL import Image, ImageDraw, ImageFont
 
-from ii_agent.browser.models import InteractiveElement, Rect
+from .models import InteractiveElement, Rect
 
 logger = logging.getLogger(__name__)
 

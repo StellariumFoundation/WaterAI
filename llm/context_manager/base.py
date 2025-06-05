@@ -2,7 +2,7 @@ import json
 import logging
 from abc import ABC, abstractmethod
 from typing import final
-from ii_agent.llm.base import (
+from llm.base import (
     GeneralContentBlock,
     TextPrompt,
     TextResult,
@@ -10,8 +10,8 @@ from ii_agent.llm.base import (
     ToolFormattedResult,
     ImageBlock,
 )
-from ii_agent.llm.token_counter import TokenCounter
-from ii_agent.llm.base import (
+from llm.token_counter import TokenCounter
+from llm.base import (
     AnthropicRedactedThinkingBlock,
     AnthropicThinkingBlock,
 )

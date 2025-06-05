@@ -28,24 +28,24 @@ from tenacity import (
 from typing_extensions import TypedDict  # to account for older python versions
 
 # Import detector class
-from ii_agent.browser.detector import Detector
-from ii_agent.browser.models import (
+from .detector import Detector
+from .models import (
     BrowserError,
     BrowserState,
     InteractiveElementsData,
     TabInfo,
 )
-from ii_agent.browser.utils import (
+from .utils import (
     filter_elements,
     put_highlight_elements_on_screenshot,
     scale_b64_image,
 )
-from ii_agent.browser.utils import is_pdf_url
+from .utils import is_pdf_url
 
 logger = logging.getLogger(__name__)
 
 INTERACTIVE_ELEMENTS_JS_CODE = resources.read_text(
-    "ii_agent.browser", "findVisibleInteractiveElements.js"
+    "browser", "findVisibleInteractiveElements.js"
 )
 
 

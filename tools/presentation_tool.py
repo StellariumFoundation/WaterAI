@@ -1,14 +1,14 @@
 import asyncio
-from ii_agent.core.event import EventType, RealtimeEvent
-from ii_agent.llm.context_manager.base import ContextManager
-from ii_agent.tools.advanced_tools.image_search_tool import ImageSearchTool
-from ii_agent.tools.base import LLMTool
-from ii_agent.utils import WorkspaceManager
-from ii_agent.tools.bash_tool import create_bash_tool
-from ii_agent.tools.str_replace_tool_relative import StrReplaceEditorTool
+from core.event import EventType, RealtimeEvent
+from llm.context_manager.base import ContextManager
+from tools.advanced_tools.image_search_tool import ImageSearchTool
+from tools.base import LLMTool
+from utils import WorkspaceManager
+from tools.bash_tool import create_bash_tool
+from tools.str_replace_tool_relative import StrReplaceEditorTool
 
-from ii_agent.llm.message_history import MessageHistory
-from ii_agent.tools.base import ToolImplOutput
+from llm.message_history import MessageHistory
+from tools.base import ToolImplOutput
 
 from typing import Any, Optional
 

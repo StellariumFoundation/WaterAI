@@ -4,3 +4,15 @@ uvicorn
 fastapi
 anyio
 sqlalchemy
+jsonschema
+anthropic
+dataclasses-json
+openai
+google-generativeai
+Pillow
+pexpect
+playwright
+tenacity
+google-cloud-storage
+google-cloud-aiplatform
+PyMuPDF

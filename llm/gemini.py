@@ -3,9 +3,9 @@ import time
 import random
 
 from typing import Any, Tuple
-from google import genai
-from google.genai import types, errors
-from ii_agent.llm.base import (
+import google.generativeai as genai
+from google.generativeai import types
+from llm.base import (
     LLMClient,
     AssistantContentBlock,
     ToolParam,
@@ -136,7 +136,7 @@ class GeminiDirectClient(LLMClient):
                     contents=gemini_messages,
                 )
                 break
-            except errors.APIError as e:
+            except genai.errors.APIError as e:
                 # 503: The service may be temporarily overloaded or down.
                 # 429: The request was throttled.
                 if e.code in [503, 429]:

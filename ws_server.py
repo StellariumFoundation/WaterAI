@@ -33,27 +33,27 @@ import anyio
 import base64
 from sqlalchemy import asc, text
 
-from ii_agent.core.event import RealtimeEvent, EventType
-from ii_agent.db.models import Event
-from ii_agent.utils.constants import DEFAULT_MODEL, UPLOAD_FOLDER_NAME
-from utils import parse_common_args, create_workspace_manager_for_connection
-from ii_agent.agents.anthropic_fc import AnthropicFC
-from ii_agent.agents.base import BaseAgent
-from ii_agent.llm.base import LLMClient
-from ii_agent.utils import WorkspaceManager
-from ii_agent.llm import get_client
-from ii_agent.utils.prompt_generator import enhance_user_prompt
+from core.event import RealtimeEvent, EventType
+from db.models import Event
+from utils.constants import DEFAULT_MODEL, UPLOAD_FOLDER_NAME
+import common_utils as utils
+from agents.anthropic_fc import AnthropicFC
+from agents.base import BaseAgent
+from llm.base import LLMClient
+from utils import WorkspaceManager
+from llm import get_client
+from utils.prompt_generator import enhance_user_prompt
 
 from fastapi.staticfiles import StaticFiles
 
-from ii_agent.llm.context_manager.llm_summarizing import LLMSummarizingContextManager
-from ii_agent.llm.context_manager.amortized_forgetting import (
+from llm.context_manager.llm_summarizing import LLMSummarizingContextManager
+from llm.context_manager.amortized_forgetting import (
     AmortizedForgettingContextManager,
 )
-from ii_agent.llm.token_counter import TokenCounter
-from ii_agent.db.manager import DatabaseManager
-from ii_agent.tools import get_system_tools
-from ii_agent.prompts.system_prompt import SYSTEM_PROMPT, SYSTEM_PROMPT_WITH_SEQ_THINKING
+from llm.token_counter import TokenCounter
+from db.manager import DatabaseManager
+from tools import get_system_tools
+from prompts.system_prompt import SYSTEM_PROMPT, SYSTEM_PROMPT_WITH_SEQ_THINKING
 
 MAX_OUTPUT_TOKENS_PER_TURN = 32000
 MAX_TURNS = 200
@@ -134,7 +134,7 @@ async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
     active_connections.add(websocket)
 
-    workspace_manager, session_uuid = create_workspace_manager_for_connection(
+    workspace_manager, session_uuid = utils.create_workspace_manager_for_connection(
         global_args.workspace, global_args.use_container_workspace
     )
     print(f"Workspace manager created: {workspace_manager}")
@@ -600,7 +600,7 @@ def main():
     parser = argparse.ArgumentParser(
         description="WebSocket Server for interacting with the Agent"
     )
-    parser = parse_common_args(parser)
+    parser = utils.parse_common_args(parser)
     parser.add_argument(
         "--host",
         type=str,

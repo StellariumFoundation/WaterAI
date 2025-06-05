@@ -1,8 +1,8 @@
 from argparse import ArgumentParser
 import uuid
 from pathlib import Path
-from ii_agent.utils import WorkspaceManager
-from ii_agent.utils.constants import DEFAULT_MODEL
+from utils import WorkspaceManager
+from utils.constants import DEFAULT_MODEL
 
 
 def parse_common_args(parser: ArgumentParser):

@@ -5,17 +5,17 @@ import uuid
 
 from typing import List
 from fastapi import WebSocket
-from ii_agent.agents.base import BaseAgent
-from ii_agent.core.event import EventType, RealtimeEvent
-from ii_agent.llm.base import LLMClient, TextResult, ToolCallParameters
-from ii_agent.llm.context_manager.base import ContextManager
-from ii_agent.llm.message_history import MessageHistory
-from ii_agent.tools.base import ToolImplOutput, LLMTool
-from ii_agent.tools.utils import encode_image
-from ii_agent.db.manager import DatabaseManager
-from ii_agent.tools import AgentToolManager
-from ii_agent.utils.constants import COMPLETE_MESSAGE
-from ii_agent.utils.workspace_manager import WorkspaceManager
+from .base import BaseAgent
+from core.event import EventType, RealtimeEvent
+from llm.base import LLMClient, TextResult, ToolCallParameters
+from llm.context_manager.base import ContextManager
+from llm.message_history import MessageHistory
+from tools.base import ToolImplOutput, LLMTool
+from tools.utils import encode_image
+from db.manager import DatabaseManager
+from tools import AgentToolManager
+from utils.constants import COMPLETE_MESSAGE
+from utils.workspace_manager import WorkspaceManager
 
 TOOL_RESULT_INTERRUPT_MESSAGE = "Tool execution interrupted by user."
 AGENT_INTERRUPT_MESSAGE = "Agent interrupted by user."

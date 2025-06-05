@@ -5,7 +5,7 @@ Computer vision detector module.
 from abc import ABC, abstractmethod
 from typing import List
 
-from ii_agent.browser.models import InteractiveElement
+from .models import InteractiveElement
 
 
 class Detector(ABC):

@@ -1,7 +1,7 @@
 import logging
-from ii_agent.llm.base import GeneralContentBlock
-from ii_agent.llm.context_manager.base import ContextManager
-from ii_agent.llm.token_counter import TokenCounter
+from llm.base import GeneralContentBlock
+from llm.context_manager.base import ContextManager
+from llm.token_counter import TokenCounter
 
 
 class PipelineContextManager(ContextManager):

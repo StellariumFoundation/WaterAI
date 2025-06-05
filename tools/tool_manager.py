@@ -3,27 +3,27 @@ import asyncio
 import logging
 from copy import deepcopy
 from typing import Optional, List, Dict, Any
-from ii_agent.llm.base import LLMClient
-from ii_agent.llm.context_manager.llm_summarizing import LLMSummarizingContextManager
-from ii_agent.llm.token_counter import TokenCounter
-from ii_agent.tools.advanced_tools.image_search_tool import ImageSearchTool
-from ii_agent.tools.base import LLMTool
-from ii_agent.llm.message_history import ToolCallParameters
-from ii_agent.tools.memory.compactify_memory import CompactifyMemoryTool
-from ii_agent.tools.memory.simple_memory import SimpleMemoryTool
-from ii_agent.tools.slide_deck_tool import SlideDeckInitTool, SlideDeckCompleteTool
-from ii_agent.tools.web_search_tool import WebSearchTool
-from ii_agent.tools.visit_webpage_tool import VisitWebpageTool
-from ii_agent.tools.str_replace_tool_relative import StrReplaceEditorTool
-from ii_agent.tools.static_deploy_tool import StaticDeployTool
-from ii_agent.tools.sequential_thinking_tool import SequentialThinkingTool
-from ii_agent.tools.message_tool import MessageTool
-from ii_agent.tools.complete_tool import CompleteTool, ReturnControlToUserTool
-from ii_agent.tools.bash_tool import create_bash_tool, create_docker_bash_tool
-from ii_agent.browser.browser import Browser
-from ii_agent.utils import WorkspaceManager
-from ii_agent.llm.message_history import MessageHistory
-from ii_agent.tools.browser_tools import (
+from llm.base import LLMClient
+from llm.context_manager.llm_summarizing import LLMSummarizingContextManager
+from llm.token_counter import TokenCounter
+from tools.advanced_tools.image_search_tool import ImageSearchTool
+from tools.base import LLMTool
+from llm.message_history import ToolCallParameters
+from tools.memory.compactify_memory import CompactifyMemoryTool
+from tools.memory.simple_memory import SimpleMemoryTool
+from tools.slide_deck_tool import SlideDeckInitTool, SlideDeckCompleteTool
+from tools.web_search_tool import WebSearchTool
+from tools.visit_webpage_tool import VisitWebpageTool
+from tools.str_replace_tool_relative import StrReplaceEditorTool
+from tools.static_deploy_tool import StaticDeployTool
+from tools.sequential_thinking_tool import SequentialThinkingTool
+from tools.message_tool import MessageTool
+from tools.complete_tool import CompleteTool, ReturnControlToUserTool
+from tools.bash_tool import create_bash_tool, create_docker_bash_tool
+from browser.browser import Browser
+from utils import WorkspaceManager
+from llm.message_history import MessageHistory
+from tools.browser_tools import (
     BrowserNavigationTool,
     BrowserRestartTool,
     BrowserScrollDownTool,
@@ -38,16 +38,16 @@ from ii_agent.tools.browser_tools import (
     BrowserGetSelectOptionsTool,
     BrowserSelectDropdownOptionTool,
 )
-from ii_agent.tools.visualizer import DisplayImageTool
-from ii_agent.tools.advanced_tools.audio_tool import (
+from tools.visualizer import DisplayImageTool
+from tools.advanced_tools.audio_tool import (
     AudioTranscribeTool,
     AudioGenerateTool,
 )
-from ii_agent.tools.advanced_tools.video_gen_tool import VideoGenerateFromTextTool
-from ii_agent.tools.advanced_tools.image_gen_tool import ImageGenerateTool
-from ii_agent.tools.advanced_tools.pdf_tool import PdfTextExtractTool
-from ii_agent.tools.deep_research_tool import DeepResearchTool
-from ii_agent.tools.list_html_links_tool import ListHtmlLinksTool
+from tools.advanced_tools.video_gen_tool import VideoGenerateFromTextTool
+from tools.advanced_tools.image_gen_tool import ImageGenerateTool
+from tools.advanced_tools.pdf_tool import PdfTextExtractTool
+# from tools.deep_research_tool import DeepResearchTool # Commented out
+from tools.list_html_links_tool import ListHtmlLinksTool
 
 
 def get_system_tools(
@@ -107,8 +107,8 @@ def get_system_tools(
     if tool_args:
         if tool_args.get("sequential_thinking", False):
             tools.append(SequentialThinkingTool())
-        if tool_args.get("deep_research", False):
-            tools.append(DeepResearchTool())
+        # if tool_args.get("deep_research", False): # Commented out
+            # tools.append(DeepResearchTool()) # Commented out
         if tool_args.get("pdf", False):
             tools.append(PdfTextExtractTool(workspace_manager=workspace_manager))
         if tool_args.get("media_generation", False) and (
