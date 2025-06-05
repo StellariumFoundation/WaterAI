@@ -4,8 +4,8 @@ build:
 	@echo "Ensuring .venv is created..."
 	@uv venv .venv
 	@echo "Syncing dependencies..."
-	@uv pip sync requirements.txt
+	@uv pip sync requirements.txt --python .venv/bin/python
 
 test:
-	@echo "Running tests..."
-	@python -m unittest discover tests
+	@echo "Activating virtual environment and running tests..."
+	@source .venv/bin/activate && python -m unittest discover tests
