@@ -10,6 +10,7 @@ datasets
 jsonschema
 anthropic
 dataclasses-json
+marshmallow
 openai
 google-generativeai
 Pillow
