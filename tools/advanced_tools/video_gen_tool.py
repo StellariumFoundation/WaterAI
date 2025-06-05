@@ -5,8 +5,7 @@ import uuid
 from pathlib import Path
 from typing import Any, Optional
 
-from google import genai
-from google.genai import types
+import google.generativeai as genai
 
 from google.cloud import storage
 from google.auth.exceptions import DefaultCredentialsError
@@ -189,7 +188,7 @@ The generated video will be saved to the specified local path in the workspace."
             operation = self.client.models.generate_videos(
                 model=self.video_model,
                 prompt=prompt,
-                config=types.GenerateVideosConfig(
+                config=genai.types.GenerateVideosConfig(
                     aspect_ratio=aspect_ratio,
                     output_gcs_uri=gcs_output_uri,  # Veo requires a GCS URI
                     number_of_videos=1,
@@ -392,8 +391,8 @@ The generated video will be saved to the specified local path in the workspace."
 
             generate_videos_kwargs = {
                 "model": self.video_model,
-                "image": types.Image(gcs_uri=temp_gcs_image_uri, mime_type=mime_type),
-                "config": types.GenerateVideosConfig(
+                "image": genai.types.Image(gcs_uri=temp_gcs_image_uri, mime_type=mime_type),
+                "config": genai.types.GenerateVideosConfig(
                     aspect_ratio=aspect_ratio,
                     output_gcs_uri=gcs_output_video_uri,
                     number_of_videos=1,

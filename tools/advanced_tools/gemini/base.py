@@ -1,7 +1,7 @@
 import os
 
 from typing import Optional
-from google import genai
+import google.generativeai as genai
 from ...base import (
     LLMTool,
 )
