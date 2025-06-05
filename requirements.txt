@@ -27,3 +27,4 @@ exceptiongroup
 pytest
 pluggy
 pygments
+iniconfig
