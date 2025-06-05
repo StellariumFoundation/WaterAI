@@ -54,3 +54,4 @@ pyparsing
 google-api-python-client
 uritemplate
 attrs
+referencing
