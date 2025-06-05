@@ -3,9 +3,8 @@ import time
 import random
 
 from typing import Any, Tuple
-from google import genai
-from google.genai import types, errors
-from ii_agent.llm.base import (
+import google.generativeai as genai
+from .base import (
     LLMClient,
     AssistantContentBlock,
     ToolParam,
@@ -62,22 +61,22 @@ class GeminiDirectClient(LLMClient):
             message_content_list = []
             for message in message_list:
                 if isinstance(message, TextPrompt):
-                    message_content = types.Part(text=message.text)
+                    message_content = genai.types.Part(text=message.text)
                 elif isinstance(message, ImageBlock):
-                    message_content = types.Part.from_bytes(
+                    message_content = genai.types.Part.from_bytes(
                             data=message.source["data"],
                             mime_type=message.source["media_type"],
                         )
                 elif isinstance(message, TextResult):
-                    message_content = types.Part(text=message.text)
+                    message_content = genai.types.Part(text=message.text)
                 elif isinstance(message, ToolCall):
-                    message_content = types.Part.from_function_call(
+                    message_content = genai.types.Part.from_function_call(
                         name=message.tool_name,
                         args=message.tool_input,
                     )
                 elif isinstance(message, ToolFormattedResult):
                     if isinstance(message.tool_output, str):
-                        message_content = types.Part.from_function_response(
+                        message_content = genai.types.Part.from_function_response(
                             name=message.tool_name,
                             response={"result": message.tool_output}
                         )
@@ -86,9 +85,9 @@ class GeminiDirectClient(LLMClient):
                         message_content = []
                         for item in message.tool_output:
                             if item['type'] == 'text':
-                                message_content.append(types.Part(text=item['text']))
+                                message_content.append(genai.types.Part(text=item['text']))
                             elif item['type'] == 'image':
-                                message_content.append(types.Part.from_bytes(
+                                message_content.append(genai.types.Part.from_bytes(
                                     data=item['source']['data'],
                                     mime_type=item['source']['media_type']
                                 ))
@@ -100,7 +99,7 @@ class GeminiDirectClient(LLMClient):
                 else:
                     message_content_list.append(message_content)
             
-            gemini_messages.append(types.Content(role=role, parts=message_content_list))
+            gemini_messages.append(genai.types.Content(role=role, parts=message_content_list))
         
         tool_declarations = [
             {
@@ -110,7 +109,7 @@ class GeminiDirectClient(LLMClient):
             }
             for tool in tools
         ]
-        tool_params = [types.Tool(function_declarations=tool_declarations)] if tool_declarations else None
+        tool_params = [genai.types.Tool(function_declarations=tool_declarations)] if tool_declarations else None
 
         mode = None
         if not tool_choice:
@@ -126,7 +125,7 @@ class GeminiDirectClient(LLMClient):
             try:
                 response = self.client.models.generate_content(
                     model=self.model_name,
-                    config=types.GenerateContentConfig(
+                    config=genai.types.GenerateContentConfig(
                         tools=tool_params,
                         system_instruction=system_prompt,
                         temperature=temperature,
@@ -136,7 +135,7 @@ class GeminiDirectClient(LLMClient):
                     contents=gemini_messages,
                 )
                 break
-            except errors.APIError as e:
+            except genai.errors.APIError as e:
                 # 503: The service may be temporarily overloaded or down.
                 # 429: The request was throttled.
                 if e.code in [503, 429]:

@@ -7,3 +7,12 @@ sqlalchemy
 pandas
 tqdm
 datasets
+jsonschema
+anthropic
+dataclasses-json
+openai
+google-generativeai
+Pillow
+pexpect
+playwright
+tenacity

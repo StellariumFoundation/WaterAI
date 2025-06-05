@@ -1,9 +1,9 @@
-from ii_agent.llm.message_history import MessageHistory
-from ii_agent.tools.base import (
+from llm.message_history import MessageHistory
+from .base import (
     LLMTool,
     ToolImplOutput,
 )
-from ii_agent.tools.web_search_client import create_search_client
+from .web_search_client import create_search_client
 from typing import Any, Optional
 
 

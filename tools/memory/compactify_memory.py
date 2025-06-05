@@ -1,7 +1,7 @@
 from typing import Any
-from ii_agent.llm.context_manager.base import ContextManager
-from ii_agent.llm.message_history import MessageHistory
-from ii_agent.tools.base import LLMTool, ToolImplOutput
+from llm.context_manager.base import ContextManager
+from llm.message_history import MessageHistory
+from ..base import LLMTool, ToolImplOutput
 
 
 class CompactifyMemoryTool(LLMTool):

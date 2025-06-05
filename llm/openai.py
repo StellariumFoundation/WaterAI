@@ -23,7 +23,7 @@ from openai._types import (
     NOT_GIVEN as OpenAI_NOT_GIVEN,  # pyright: ignore[reportPrivateImportUsage]
 )
 
-from ii_agent.llm.base import (
+from .base import (
     LLMClient,
     AssistantContentBlock,
     LLMMessages,

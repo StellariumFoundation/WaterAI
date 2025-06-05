@@ -2,19 +2,17 @@ import json
 import logging
 from abc import ABC, abstractmethod
 from typing import final
-from ii_agent.llm.base import (
+from ..base import (
     GeneralContentBlock,
     TextPrompt,
     TextResult,
     ToolCall,
     ToolFormattedResult,
     ImageBlock,
-)
-from ii_agent.llm.token_counter import TokenCounter
-from ii_agent.llm.base import (
     AnthropicRedactedThinkingBlock,
     AnthropicThinkingBlock,
 )
+from ..token_counter import TokenCounter
 
 
 class ContextManager(ABC):

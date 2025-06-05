@@ -39,7 +39,7 @@ from anthropic.types.message_create_params import (
 )
 
 
-from ii_agent.llm.base import (
+from .base import (
     LLMClient,
     AssistantContentBlock,
     ToolParam,
@@ -52,7 +52,7 @@ from ii_agent.llm.base import (
     recursively_remove_invoke_tag,
     ImageBlock,
 )
-from ii_agent.utils.constants import DEFAULT_MODEL
+from utils.constants import DEFAULT_MODEL
 
 
 class AnthropicDirectClient(LLMClient):
