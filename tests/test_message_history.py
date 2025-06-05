@@ -1,11 +1,11 @@
 import pytest
-from ii_agent.llm.base import (
+from llm.base import (
     TextPrompt,
     TextResult,
     ToolCall,
     ToolFormattedResult,
 )
-from ii_agent.llm.message_history import MessageHistory
+from llm.message_history import MessageHistory
 
 
 @pytest.fixture
