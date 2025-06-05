@@ -25,3 +25,4 @@ annotated-types
 sniffio
 exceptiongroup
 pytest
+pluggy
