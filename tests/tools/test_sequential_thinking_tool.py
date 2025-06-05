@@ -4,7 +4,7 @@ import json
 import unittest
 from unittest.mock import Mock, patch
 
-from ii_agent.tools.sequential_thinking_tool import (
+from tools.sequential_thinking_tool import (
     SequentialThinkingTool,
 )
 

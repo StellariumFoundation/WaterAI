@@ -53,3 +53,8 @@ httplib2
 pyparsing
 google-api-python-client
 uritemplate
+attrs
+referencing
+rpds-py
+jsonschema-specifications
+ptyprocess

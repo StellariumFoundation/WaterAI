@@ -8,4 +8,4 @@ build:
 
 test:
 	@echo "Activating virtual environment and running tests..."
-	@. .venv/bin/activate && python -m unittest discover tests
+	@. .venv/bin/activate && PYTHONPATH=$(pwd):$PYTHONPATH pytest tests/ --ignore=tests/run_gaia.py

@@ -2,7 +2,7 @@ import logging
 from unittest.mock import Mock
 import re
 
-from ii_agent.llm.base import (
+from llm.base import (
     ImageBlock,
     TextPrompt,
     TextResult,
@@ -10,8 +10,8 @@ from ii_agent.llm.base import (
     ToolCall,
     ToolFormattedResult,
 )
-from ii_agent.llm.context_manager.llm_summarizing import LLMSummarizingContextManager
-from ii_agent.llm.token_counter import TokenCounter
+from llm.context_manager.llm_summarizing import LLMSummarizingContextManager
+from llm.token_counter import TokenCounter
 
 
 def test_llm_summarizing_context_manager():

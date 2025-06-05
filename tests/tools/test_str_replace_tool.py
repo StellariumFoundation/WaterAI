@@ -1,5 +1,5 @@
 from unittest.mock import MagicMock, patch
-from ii_agent.tools.str_replace_tool_relative import StrReplaceEditorTool
+from tools.str_replace_tool_relative import StrReplaceEditorTool
 
 
 def build_ws_manager(root):
