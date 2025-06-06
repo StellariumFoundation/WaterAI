@@ -1,11 +1,11 @@
 from typing import Any, Optional
-from ii_agent.llm.message_history import MessageHistory
-from ii_agent.tools.base import (
+from llm.message_history import MessageHistory
+from tools.base import (
     LLMTool,
     ToolImplOutput,
 )
 from .markdown_converter import MarkdownConverter
-from ii_agent.utils import WorkspaceManager
+from utils import WorkspaceManager
 
 
 class TextInspectorTool(LLMTool):

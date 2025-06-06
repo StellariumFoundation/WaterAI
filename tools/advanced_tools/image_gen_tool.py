@@ -9,12 +9,12 @@ from vertexai.preview.vision_models import (
     ImageGenerationModel,
 )  # Use preview for Imagen 3
 
-from ii_agent.tools.base import (
+from tools.base import (
     MessageHistory,
     LLMTool,
     ToolImplOutput,
 )
-from ii_agent.utils import WorkspaceManager
+from utils import WorkspaceManager
 
 GCP_PROJECT_ID = os.environ.get("GOOGLE_CLOUD_PROJECT")
 GCP_LOCATION = os.environ.get("GOOGLE_CLOUD_REGION")

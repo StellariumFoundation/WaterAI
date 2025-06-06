@@ -1,8 +1,8 @@
 """Tool for performing deep research on a complex topic."""
 
 from typing import Any, Optional
-from ii_agent.llm.message_history import MessageHistory
-from ii_agent.tools.base import LLMTool, ToolImplOutput
+from llm.message_history import MessageHistory
+from tools.base import LLMTool, ToolImplOutput
 from ii_researcher.reasoning.agent import ReasoningAgent
 from ii_researcher.reasoning.builders.report import ReportType
 import asyncio

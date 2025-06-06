@@ -6,13 +6,13 @@ from pathlib import Path
 from typing import Any, Optional
 from openai import APIError, AzureOpenAI
 
-from ii_agent.tools.base import (
+from tools.base import (
     LLMTool,
     ToolImplOutput,
 )
 
-from ii_agent.utils import WorkspaceManager
-from ii_agent.llm.message_history import MessageHistory
+from utils import WorkspaceManager
+from llm.message_history import MessageHistory
 
 SUPPORTED_AUDIO_FORMATS = [
     ".flac",
