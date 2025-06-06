@@ -4,20 +4,20 @@ This module contains tests for the core functionality of BashTool,
 including command execution, error handling, and integration with command filters.
 """
 
-import pytest
-from pathlib import Path
 import unittest
-from unittest.mock import patch, MagicMock
+from pathlib import Path
+from unittest.mock import MagicMock, patch
 
+import pytest
 
 from tools.base import ToolImplOutput
 from tools.bash_tool import (
     BashTool,
     CommandFilter,
     DockerCommandFilter,
-    start_persistent_shell,
-    run_command,
     create_bash_tool,
+    run_command,
+    start_persistent_shell,
 )
 
 
@@ -490,7 +490,6 @@ class TestWithRealContainer(unittest.TestCase):
 
     def tearDown(self):
         """Tear down the test."""
-        pass
         self.stop_container()
 
     def start_container(self):

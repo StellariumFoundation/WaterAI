@@ -1,7 +1,9 @@
 import json
 import os
-import requests
 import urllib
+
+import requests
+
 from .utils import truncate_content
 
 

@@ -1,0 +1,16 @@
+[tool.isort]
+profile = "black"
+known_first_party = [
+    "actions",
+    "agents",
+    "browser",
+    "core",
+    "db",
+    "llm",
+    "prompts",
+    "run_gaia",
+    "tests",
+    "tools",
+    "utils",
+    "ws_server"
+]

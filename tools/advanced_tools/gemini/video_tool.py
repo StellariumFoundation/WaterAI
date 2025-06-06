@@ -1,8 +1,9 @@
 from typing import Any, Optional
-from google.genai import types
+
+from google.generativeai import types # Changed from google.genai
 from ii_agent.llm.message_history import MessageHistory
+from .base import GeminiTool # Changed from ii_agent.tools.advanced_tools.gemini
 from ii_agent.tools.base import ToolImplOutput
-from ii_agent.tools.advanced_tools.gemini import GeminiTool
 from ii_agent.utils import WorkspaceManager
 
 

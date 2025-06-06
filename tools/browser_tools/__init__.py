@@ -1,13 +1,13 @@
 from .base import BrowserTool
 from .click import BrowserClickTool
-from .enter_text import BrowserEnterTextTool
-from .press_key import BrowserPressKeyTool
-from .wait import BrowserWaitTool
-from .view import BrowserViewTool
-from .scroll import BrowserScrollDownTool, BrowserScrollUpTool
-from .tab import BrowserSwitchTabTool, BrowserOpenNewTabTool
-from .navigate import BrowserNavigationTool, BrowserRestartTool
 from .dropdown import BrowserGetSelectOptionsTool, BrowserSelectDropdownOptionTool
+from .enter_text import BrowserEnterTextTool
+from .navigate import BrowserNavigationTool, BrowserRestartTool
+from .press_key import BrowserPressKeyTool
+from .scroll import BrowserScrollDownTool, BrowserScrollUpTool
+from .tab import BrowserOpenNewTabTool, BrowserSwitchTabTool
+from .view import BrowserViewTool
+from .wait import BrowserWaitTool
 
 __all__ = [
     "BrowserTool",

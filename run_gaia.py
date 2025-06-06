@@ -6,25 +6,37 @@ This script provides functionality to run evaluations on the GAIA dataset using 
 It integrates with the existing CLI infrastructure while adding GAIA-specific evaluation capabilities.
 """
 
-import os
-import json
 import argparse
+import asyncio
+import json
+import logging
+import os
+import shutil
+import uuid
 from datetime import datetime
 from pathlib import Path
-import shutil
 from threading import Lock
-import logging
+
 import pandas as pd
 import sqlalchemy
-from tqdm import tqdm
-from datasets import load_dataset, Dataset
+from datasets import Dataset, load_dataset
 from huggingface_hub import snapshot_download
-import uuid
-import asyncio
-from db.models import Session, Event
+from tqdm import tqdm
+
 from agents.anthropic_fc import AnthropicFC
 from browser.browser import Browser
+from core.event import EventType, RealtimeEvent
+from db.manager import DatabaseManager
+from db.models import Event, Session
+from llm import get_client
+from llm.context_manager.llm_summarizing import LLMSummarizingContextManager
+from llm.token_counter import TokenCounter
 from prompts.gaia_system_prompt import GAIA_SYSTEM_PROMPT
+from tools.advanced_tools.gemini import (
+    AudioTranscribeTool,
+    AudioUnderstandingTool,
+    YoutubeVideoUnderstandingTool,
+)
 from tools.bash_tool import BashTool
 from tools.browser_tools import (
     BrowserClickTool,
@@ -39,26 +51,23 @@ from tools.browser_tools import (
     BrowserViewTool,
     BrowserWaitTool,
 )
-from tools.advanced_tools.gemini import (
-    AudioUnderstandingTool,
-    AudioTranscribeTool,
-    YoutubeVideoUnderstandingTool,
-)
 from tools.sequential_thinking_tool import SequentialThinkingTool
 from tools.str_replace_tool_relative import StrReplaceEditorTool
 from tools.text_inspector_tool import TextInspectorTool
 from tools.visit_webpage_tool import VisitWebpageTool
 from tools.visualizer import DisplayImageTool
 from tools.web_search_tool import WebSearchTool
-from utils import WorkspaceManager # Assuming WorkspaceManager is in utils or utils/__init__.py
-from llm import get_client
-from llm.context_manager.llm_summarizing import LLMSummarizingContextManager
-from llm.token_counter import TokenCounter
-from utils.constants import DEFAULT_MODEL, UPLOAD_FOLDER_NAME # Assuming constants is in utils/constants.py
-from utils import parse_common_args
-from db.manager import DatabaseManager
-from core.event import RealtimeEvent, EventType
 from tools.youtube_transcript_tool import YoutubeTranscriptTool
+from utils import (
+    WorkspaceManager,  # Assuming WorkspaceManager is in utils or utils/__init__.py
+)
+from common_args_utils import ( # Changed from utils
+    parse_common_args,
+)
+from utils.constants import (  # Assuming constants is in utils/constants.py
+    DEFAULT_MODEL,
+    UPLOAD_FOLDER_NAME,
+)
 
 # Global lock for thread-safe file appending
 append_answer_lock = Lock()

@@ -1,58 +1,44 @@
 import os
-
 import random
 import time
 from typing import Any, Tuple, cast
+
 import anthropic
-from anthropic import (
-    NOT_GIVEN as Anthropic_NOT_GIVEN,
-)
-from anthropic import (
-    APIConnectionError as AnthropicAPIConnectionError,
-)
-from anthropic import (
-    InternalServerError as AnthropicInternalServerError,
-)
-from anthropic import (
-    RateLimitError as AnthropicRateLimitError,
-)
+from anthropic import NOT_GIVEN as Anthropic_NOT_GIVEN
+from anthropic import APIConnectionError as AnthropicAPIConnectionError
+from anthropic import InternalServerError as AnthropicInternalServerError
+from anthropic import RateLimitError as AnthropicRateLimitError
 from anthropic._exceptions import (
     OverloadedError as AnthropicOverloadedError,  # pyright: ignore[reportPrivateImportUsage]
 )
-from anthropic.types import (
-    TextBlock as AnthropicTextBlock,
-    ThinkingBlock as AnthropicThinkingBlock,
-    RedactedThinkingBlock as AnthropicRedactedThinkingBlock,
-    ImageBlockParam as AnthropicImageBlockParam,
-)
+from anthropic.types import ImageBlockParam as AnthropicImageBlockParam
+from anthropic.types import RedactedThinkingBlock as AnthropicRedactedThinkingBlock
+from anthropic.types import TextBlock as AnthropicTextBlock
+from anthropic.types import ThinkingBlock as AnthropicThinkingBlock
 from anthropic.types import ToolParam as AnthropicToolParam
-from anthropic.types import (
-    ToolResultBlockParam as AnthropicToolResultBlockParam,
-)
-from anthropic.types import (
-    ToolUseBlock as AnthropicToolUseBlock,
-)
+from anthropic.types import ToolResultBlockParam as AnthropicToolResultBlockParam
+from anthropic.types import ToolUseBlock as AnthropicToolUseBlock
 from anthropic.types.message_create_params import (
     ToolChoiceToolChoiceAny,
     ToolChoiceToolChoiceAuto,
     ToolChoiceToolChoiceTool,
 )
 
+from utils.constants import DEFAULT_MODEL
 
 from .base import (
-    LLMClient,
     AssistantContentBlock,
-    ToolParam,
-    TextPrompt,
-    ToolCall,
-    TextResult,
+    ImageBlock,
+    LLMClient,
     LLMMessages,
+    TextPrompt,
+    TextResult,
+    ToolCall,
     ToolFormattedResult,
+    ToolParam,
     UserContentBlock,
     recursively_remove_invoke_tag,
-    ImageBlock,
 )
-from utils.constants import DEFAULT_MODEL
 
 
 class AnthropicDirectClient(LLMClient):

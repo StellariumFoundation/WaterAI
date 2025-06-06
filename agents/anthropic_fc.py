@@ -1,21 +1,22 @@
 import asyncio
 import logging
-from typing import Any, Optional
 import uuid
+from typing import Any, List, Optional
 
-from typing import List
 from fastapi import WebSocket
-from .base import BaseAgent
+
 from core.event import EventType, RealtimeEvent
+from db.manager import DatabaseManager
 from llm.base import LLMClient, TextResult, ToolCallParameters
 from llm.context_manager.base import ContextManager
 from llm.message_history import MessageHistory
-from tools.base import ToolImplOutput, LLMTool
-from tools.utils import encode_image
-from db.manager import DatabaseManager
 from tools import AgentToolManager
-from utils.constants import COMPLETE_MESSAGE
+from tools.base import LLMTool, ToolImplOutput
+from tools.utils import encode_image
 from utils import WorkspaceManager
+from utils.constants import COMPLETE_MESSAGE
+
+from .base import BaseAgent
 
 TOOL_RESULT_INTERRUPT_MESSAGE = "Tool execution interrupted by user."
 AGENT_INTERRUPT_MESSAGE = "Agent interrupted by user."

@@ -1,8 +1,9 @@
-import json
 import base64
-from typing import Any, Union
-from PIL import Image
 import io
+import json
+from typing import Any, Union
+
+from PIL import Image
 
 
 class TokenCounter:

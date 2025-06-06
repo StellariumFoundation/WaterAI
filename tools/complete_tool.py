@@ -1,7 +1,9 @@
 """Tool for indicating task completion."""
 
 from typing import Any, Optional
+
 from llm.message_history import MessageHistory
+
 from .base import LLMTool, ToolImplOutput
 
 

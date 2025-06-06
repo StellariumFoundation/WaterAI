@@ -1,0 +1,64 @@
+./agents/anthropic_fc.py:4:1: I100 Import statements are in the wrong order. 'from typing import Any, List, Optional' should be before 'import uuid'
+./agents/anthropic_fc.py:19:1: I202 Additional newline in a group of imports. 'from .base import BaseAgent' is identified as Application Relative and 'from utils.constants import COMPLETE_MESSAGE' is identified as Application.
+./browser/browser.py:7:1: I100 Import statements are in the wrong order. 'from dataclasses import dataclass, field' should be before 'import logging'
+./browser/browser.py:13:1: I101 Imported names are in the wrong order. Should be async_playwright, Page, Playwright, StorageState
+./browser/utils.py:3:1: I100 Import statements are in the wrong order. 'from io import BytesIO' should be before 'import logging'
+./browser/utils.py:9:1: I100 Import statements are in the wrong order. 'from ii_agent.browser.models import InteractiveElement, Rect' should be before 'import requests'
+./db/manager.py:2:1: I100 Import statements are in the wrong order. 'from contextlib import contextmanager' should be before 'import uuid'
+./db/models.py:2:1: I100 Import statements are in the wrong order. 'from datetime import datetime' should be before 'import uuid'
+./llm/anthropic.py:4:1: I101 Imported names are in the wrong order. Should be Any, cast, Tuple
+./llm/anthropic.py:8:1: I100 Import statements are in the wrong order. 'from anthropic import APIConnectionError' should be before 'from anthropic import NOT_GIVEN'
+./llm/anthropic.py:29:1: I101 Imported names are in the wrong order. Should be AssistantContentBlock, ImageBlock, LLMClient, LLMMessages, recursively_remove_invoke_tag, TextPrompt, TextResult, ToolCall, ToolFormattedResult, ToolParam, UserContentBlock
+./llm/anthropic.py:29:1: I202 Additional newline in a group of imports. 'from .base import AssistantContentBlock, ImageBlock, LLMClient, LLMMessages, TextPrompt, TextResult, ToolCall, ToolFormattedResult, ToolParam, UserContentBlock, recursively_remove_invoke_tag' is identified as Application Relative and 'from utils.constants import DEFAULT_MODEL' is identified as Application.
+./llm/base.py:3:1: I100 Import statements are in the wrong order. 'from abc import ABC, abstractmethod' should be before 'import logging'
+./llm/context_manager/amortized_forgetting.py:5:1: I100 Import statements are in the wrong order. 'from .base import ContextManager' should be before 'from ..token_counter import TokenCounter'
+./llm/context_manager/base.py:3:1: I100 Import statements are in the wrong order. 'from abc import ABC, abstractmethod' should be before 'import logging'
+./llm/context_manager/llm_summarizing.py:5:1: I100 Import statements are in the wrong order. 'from .base import ContextManager' should be before 'from ..token_counter import TokenCounter'
+./llm/context_manager/pipeline.py:5:1: I100 Import statements are in the wrong order. 'from .base import ContextManager' should be before 'from ..token_counter import TokenCounter'
+./llm/message_history.py:2:1: I101 Imported names are in the wrong order. Should be Any, cast, Optional
+./llm/openai.py:8:1: I101 Imported names are in the wrong order. Should be Any, cast, Tuple
+./prompts/gaia_system_prompt.py:2:1: I100 Import statements are in the wrong order. 'from datetime import datetime' should be before 'import platform'
+./prompts/system_prompt.py:2:1: I100 Import statements are in the wrong order. 'from datetime import datetime' should be before 'import platform'
+./run_gaia.py:16:1: I100 Import statements are in the wrong order. 'from datetime import datetime' should be before 'import uuid'
+./run_gaia.py:22:1: I100 Import statements are in the wrong order. 'from datasets import Dataset, load_dataset' should be before 'import sqlalchemy'
+./run_gaia.py:64:1: I100 Import statements are in the wrong order. 'from utils import parse_common_args' should be before 'from utils import WorkspaceManager'
+./tests/run_gaia.py:16:1: I100 Import statements are in the wrong order. 'from datetime import datetime' should be before 'import uuid'
+./tests/run_gaia.py:22:1: I100 Import statements are in the wrong order. 'from datasets import Dataset, load_dataset' should be before 'import sqlalchemy'
+./tests/tools/test_bash_tool.py:8:1: I100 Import statements are in the wrong order. 'from pathlib import Path' should be before 'import unittest'
+./tests/tools/test_bash_tool.py:14:1: I101 Imported names are in the wrong order. Should be BashTool, CommandFilter, create_bash_tool, DockerCommandFilter, run_command, start_persistent_shell
+./tools/advanced_tools/audio_tool.py:5:1: I100 Import statements are in the wrong order. 'from pathlib import Path' should be before 'import subprocess'
+./tools/advanced_tools/image_gen_tool.py:8:1: I100 Import statements are in the wrong order. 'from ii_agent.tools.base import LLMTool, MessageHistory, ToolImplOutput' should be before 'import vertexai'
+./tools/advanced_tools/image_search_tool.py:5:1: I202 Additional newline in a group of imports. 'from ..base import LLMTool, ToolImplOutput' is identified as Application Relative and 'from llm.message_history import MessageHistory' is identified as Application.
+./tools/advanced_tools/pdf_tool.py:5:1: I100 Import statements are in the wrong order. 'from ii_agent.llm.message_history import MessageHistory' should be before 'import pymupdf'
+./tools/advanced_tools/video_gen_tool.py:5:1: I100 Import statements are in the wrong order. 'from pathlib import Path' should be before 'import uuid'
+./tools/base.py:6:1: I100 Import statements are in the wrong order. 'from anthropic import BadRequestError' should be before 'import jsonschema'
+./tools/bash_tool.py:12:1: I100 Import statements are in the wrong order. 'from abc import ABC, abstractmethod' should be before 'import re'
+./tools/bash_tool.py:20:1: I202 Additional newline in a group of imports. 'from .base import LLMTool, ToolImplOutput' is identified as Application Relative and 'from llm.message_history import MessageHistory' is identified as Application.
+./tools/complete_tool.py:7:1: I202 Additional newline in a group of imports. 'from .base import LLMTool, ToolImplOutput' is identified as Application Relative and 'from llm.message_history import MessageHistory' is identified as Application.
+./tools/list_html_links_tool.py:3:1: I100 Import statements are in the wrong order. 'from pathlib import Path' should be before 'import re'
+./tools/markdown_converter.py:17:1: I100 Import statements are in the wrong order. 'from typing import Any' should be before 'import zipfile'
+./tools/markdown_converter.py:28:1: I202 Additional newline in a group of imports. 'import puremagic' is identified as Third Party and 'import pptx' is identified as Third Party.
+./tools/markdown_converter.py:32:1: I100 Import statements are in the wrong order. 'from bs4 import BeautifulSoup' should be before 'import speech_recognition'
+./tools/memory/compactify_memory.py:6:1: I202 Additional newline in a group of imports. 'from ..base import LLMTool, ToolImplOutput' is identified as Application Relative and 'from llm.message_history import MessageHistory' is identified as Application.
+./tools/memory/simple_memory.py:5:1: I202 Additional newline in a group of imports. 'from ..base import LLMTool, ToolImplOutput' is identified as Application Relative and 'from llm.message_history import MessageHistory' is identified as Application.
+./tools/message_tool.py:5:1: I202 Additional newline in a group of imports. 'from .base import LLMTool, ToolImplOutput' is identified as Application Relative and 'from llm.message_history import MessageHistory' is identified as Application.
+./tools/sequential_thinking_tool.py:17:1: I202 Additional newline in a group of imports. 'from .base import LLMTool, ToolImplOutput' is identified as Application Relative and 'from llm.message_history import MessageHistory' is identified as Application.
+./tools/slide_deck_tool.py:8:1: I202 Additional newline in a group of imports. 'from .base import LLMTool, ToolImplOutput' is identified as Application Relative and 'from utils.workspace_manager import WorkspaceManager' is identified as Application.
+./tools/static_deploy_tool.py:8:1: I202 Additional newline in a group of imports. 'from .base import LLMTool, ToolImplOutput' is identified as Application Relative and 'from utils.workspace_manager import WorkspaceManager' is identified as Application.
+./tools/str_replace_tool.py:9:1: I100 Import statements are in the wrong order. 'from asyncio import Queue' should be before 'import logging'
+./tools/str_replace_tool.py:12:1: I101 Imported names are in the wrong order. Should be Any, get_args, Literal, Optional
+./tools/str_replace_tool.py:18:1: I101 Imported names are in the wrong order. Should be match_indent, match_indent_by_first_line, WorkspaceManager
+./tools/str_replace_tool_relative.py:9:1: I100 Import statements are in the wrong order. 'from asyncio import Queue' should be before 'import logging'
+./tools/str_replace_tool_relative.py:12:1: I101 Imported names are in the wrong order. Should be Any, get_args, Literal, Optional
+./tools/str_replace_tool_relative.py:17:1: I101 Imported names are in the wrong order. Should be match_indent, match_indent_by_first_line, WorkspaceManager
+./tools/str_replace_tool_relative.py:19:1: I202 Additional newline in a group of imports. 'from .base import LLMTool, ToolImplOutput' is identified as Application Relative and 'from utils import WorkspaceManager, match_indent, match_indent_by_first_line' is identified as Application.
+./tools/tool_manager.py:4:1: I100 Import statements are in the wrong order. 'from copy import deepcopy' should be before 'import os'
+./tools/tool_manager.py:14:1: I202 Additional newline in a group of imports. 'from .advanced_tools.audio_tool import AudioGenerateTool, AudioTranscribeTool' is identified as Application Relative and 'from utils import WorkspaceManager' is identified as Application.
+./tools/utils.py:5:1: I100 Import statements are in the wrong order. 'from PIL import Image' should be before 'import requests'
+./tools/visit_webpage_tool.py:5:1: I202 Additional newline in a group of imports. 'from .base import LLMTool, ToolImplOutput' is identified as Application Relative and 'from llm.message_history import MessageHistory' is identified as Application.
+./tools/visit_webpage_tool.py:6:1: I101 Imported names are in the wrong order. Should be ContentExtractionError, create_visit_client, NetworkError, WebpageVisitException
+./tools/web_search_tool.py:5:1: I202 Additional newline in a group of imports. 'from .base import LLMTool, ToolImplOutput' is identified as Application Relative and 'from llm.message_history import MessageHistory' is identified as Application.
+./tools/youtube_transcript_tool.py:5:1: I100 Import statements are in the wrong order. 'from ii_agent.llm.message_history import MessageHistory' should be before 'import yt_dlp'
+./utils.py:2:1: I100 Import statements are in the wrong order. 'from argparse import ArgumentParser' should be before 'import uuid'
+./ws_server.py:16:1: I100 Import statements are in the wrong order. 'from pathlib import Path' should be before 'import uuid'
+./ws_server.py:21:1: I100 Import statements are in the wrong order. 'from dotenv import load_dotenv' should be before 'import uvicorn'

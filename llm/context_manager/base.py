@@ -2,15 +2,16 @@ import json
 import logging
 from abc import ABC, abstractmethod
 from typing import final
+
 from ..base import (
+    AnthropicRedactedThinkingBlock,
+    AnthropicThinkingBlock,
     GeneralContentBlock,
+    ImageBlock,
     TextPrompt,
     TextResult,
     ToolCall,
     ToolFormattedResult,
-    ImageBlock,
-    AnthropicRedactedThinkingBlock,
-    AnthropicThinkingBlock,
 )
 from ..token_counter import TokenCounter
 
@@ -102,4 +103,3 @@ class ContextManager(ABC):
         self, message_lists: list[list[GeneralContentBlock]]
     ) -> list[list[GeneralContentBlock]]:
         """Apply truncation to message lists if needed."""
-        pass

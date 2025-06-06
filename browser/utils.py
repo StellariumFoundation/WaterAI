@@ -1,13 +1,13 @@
 import base64
 import logging
-import requests
 from io import BytesIO
 from pathlib import Path
 from typing import List
 from urllib.parse import urlparse
-from PIL import Image, ImageDraw, ImageFont
 
+import requests
 from ii_agent.browser.models import InteractiveElement, Rect
+from PIL import Image, ImageDraw, ImageFont
 
 logger = logging.getLogger(__name__)
 

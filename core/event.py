@@ -1,6 +1,7 @@
-from pydantic import BaseModel
-from typing import Any
 import enum
+from typing import Any
+
+from pydantic import BaseModel
 
 
 class EventType(str, enum.Enum):

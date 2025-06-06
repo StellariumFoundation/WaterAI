@@ -5,17 +5,11 @@ import uuid
 from pathlib import Path
 from typing import Any, Optional
 
-from google import genai
-from google.genai import types
-
-from google.cloud import storage
+import google.generativeai as genai
 from google.auth.exceptions import DefaultCredentialsError
-
-from ii_agent.tools.base import (
-    MessageHistory,
-    LLMTool,
-    ToolImplOutput,
-)
+from google.cloud import storage
+from google.generativeai import types # Changed from google.genai to google.generativeai
+from ii_agent.tools.base import LLMTool, MessageHistory, ToolImplOutput
 from ii_agent.utils import WorkspaceManager
 
 GCP_PROJECT_ID = os.environ.get("GOOGLE_CLOUD_PROJECT")

@@ -1,10 +1,6 @@
 import pytest
-from llm.base import (
-    TextPrompt,
-    TextResult,
-    ToolCall,
-    ToolFormattedResult,
-)
+
+from llm.base import TextPrompt, TextResult, ToolCall, ToolFormattedResult
 from llm.message_history import MessageHistory
 
 

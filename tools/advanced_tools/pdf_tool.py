@@ -1,12 +1,9 @@
 from pathlib import Path
 from typing import Any, Optional
-import pymupdf
 
+import pymupdf
 from ii_agent.llm.message_history import MessageHistory
-from ii_agent.tools.base import (
-    LLMTool,
-    ToolImplOutput,
-)
+from ii_agent.tools.base import LLMTool, ToolImplOutput
 from ii_agent.utils import WorkspaceManager
 
 

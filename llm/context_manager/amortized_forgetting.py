@@ -1,7 +1,8 @@
 import logging
+
 from ..base import GeneralContentBlock
-from .base import ContextManager
 from ..token_counter import TokenCounter
+from .base import ContextManager
 
 
 class AmortizedForgettingContextManager(ContextManager):

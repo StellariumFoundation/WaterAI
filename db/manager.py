@@ -1,11 +1,13 @@
-from contextlib import contextmanager
-from typing import Optional, Generator
 import uuid
+from contextlib import contextmanager
 from pathlib import Path
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, Session as DBSession
-from ii_agent.db.models import Base, Session, Event
+from typing import Generator, Optional
+
 from ii_agent.core.event import EventType, RealtimeEvent
+from ii_agent.db.models import Base, Event, Session
+from sqlalchemy import create_engine
+from sqlalchemy.orm import Session as DBSession
+from sqlalchemy.orm import sessionmaker
 
 
 class DatabaseManager:

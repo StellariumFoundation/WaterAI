@@ -1,4 +1,5 @@
 from unittest.mock import MagicMock, patch
+
 from tools.str_replace_tool_relative import StrReplaceEditorTool
 
 

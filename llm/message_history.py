@@ -1,15 +1,16 @@
 import json
-from typing import Optional, cast, Any
+from typing import Any, Optional, cast
+
 from .base import (
     AssistantContentBlock,
     GeneralContentBlock,
+    ImageBlock,
     LLMMessages,
     TextPrompt,
     TextResult,
     ToolCall,
     ToolCallParameters,
     ToolFormattedResult,
-    ImageBlock,
 )
 from .context_manager.base import ContextManager
 

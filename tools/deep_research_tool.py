@@ -1,11 +1,12 @@
 """Tool for performing deep research on a complex topic."""
 
+import asyncio
 from typing import Any, Optional
+
 from ii_agent.llm.message_history import MessageHistory
 from ii_agent.tools.base import LLMTool, ToolImplOutput
 from ii_researcher.reasoning.agent import ReasoningAgent
 from ii_researcher.reasoning.builders.report import ReportType
-import asyncio
 
 
 def on_token(token: str):

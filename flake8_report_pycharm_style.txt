@@ -1,0 +1,21 @@
+./agents/anthropic_fc.py:8:1: I100 Import statements are in the wrong order. 'from core.event import EventType, RealtimeEvent' should be before 'from fastapi import WebSocket'
+./agents/anthropic_fc.py:8:1: I202 Additional newline in a group of imports. 'from core.event import EventType, RealtimeEvent' is identified as Third Party and 'from fastapi import WebSocket' is identified as Third Party.
+./browser/utils.py:10:1: I100 Import statements are in the wrong order. 'from PIL import Image, ImageDraw, ImageFont' should be before 'from ii_agent.browser.models import InteractiveElement, Rect'
+./llm/anthropic.py:8:1: I100 Import statements are in the wrong order. 'from anthropic import APIConnectionError' should be before 'from anthropic import NOT_GIVEN'
+./llm/anthropic.py:27:1: I202 Additional newline in a group of imports. 'from utils.constants import DEFAULT_MODEL' is identified as Third Party and 'from anthropic.types.message_create_params import ToolChoiceToolChoiceAny, ToolChoiceToolChoiceAuto, ToolChoiceToolChoiceTool' is identified as Third Party.
+./llm/context_manager/amortized_forgetting.py:5:1: I100 Import statements are in the wrong order. 'from .base import ContextManager' should be before 'from ..token_counter import TokenCounter'
+./llm/context_manager/llm_summarizing.py:5:1: I100 Import statements are in the wrong order. 'from .base import ContextManager' should be before 'from ..token_counter import TokenCounter'
+./llm/context_manager/pipeline.py:5:1: I100 Import statements are in the wrong order. 'from .base import ContextManager' should be before 'from ..token_counter import TokenCounter'
+./llm/openai.py:14:1: I202 Additional newline in a group of imports. 'from openai import APIConnectionError' is identified as Third Party and 'import openai' is identified as Third Party.
+./llm/openai.py:199:21: F841 local variable 'openai_temperature' is assigned to but never used
+./run_gaia.py:26:1: I100 Import statements are in the wrong order. 'from agents.anthropic_fc import AnthropicFC' should be before 'from tqdm import tqdm'
+./run_gaia.py:26:1: I202 Additional newline in a group of imports. 'from agents.anthropic_fc import AnthropicFC' is identified as Third Party and 'from tqdm import tqdm' is identified as Third Party.
+./tests/run_gaia.py:59:1: I202 Additional newline in a group of imports. 'from utils import parse_common_args' is identified as Third Party and 'from tqdm import tqdm' is identified as Third Party.
+./tests/test_message_history.py:3:1: I202 Additional newline in a group of imports. 'from llm.base import TextPrompt, TextResult, ToolCall, ToolFormattedResult' is identified as Third Party and 'import pytest' is identified as Third Party.
+./tests/tools/test_bash_tool.py:13:1: I202 Additional newline in a group of imports. 'from tools.base import ToolImplOutput' is identified as Third Party and 'import pytest' is identified as Third Party.
+./tools/base.py:9:1: I100 Import statements are in the wrong order. 'from llm.base import ToolParam' should be before 'from typing_extensions import final'
+./tools/base.py:9:1: I202 Additional newline in a group of imports. 'from llm.base import ToolParam' is identified as Third Party and 'from typing_extensions import final' is identified as Third Party.
+./tools/bash_tool.py:18:1: I202 Additional newline in a group of imports. 'from llm.message_history import MessageHistory' is identified as Third Party and 'import pexpect' is identified as Third Party.
+./ws_server.py:22:1: I100 Import statements are in the wrong order. 'import base64' should be before 'from dotenv import load_dotenv' and in a different group.
+./ws_server.py:51:1: I202 Additional newline in a group of imports. 'from utils import create_workspace_manager_for_connection, parse_common_args' is identified as Third Party and 'from sqlalchemy import asc, text' is identified as Third Party.
+./ws_server.py:497:5: F824 `global global_args` is unused: name is never assigned in scope

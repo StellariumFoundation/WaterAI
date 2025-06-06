@@ -58,3 +58,13 @@ referencing
 rpds-py
 jsonschema-specifications
 ptyprocess
+vertexai
+pymupdf
+mammoth
+pdfminer.six
+python-pptx
+puremagic
+pydub
+SpeechRecognition
+youtube-transcript-api
+ii_researcher

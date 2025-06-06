@@ -1,10 +1,9 @@
-from llm.message_history import MessageHistory
-from ..base import (
-    LLMTool,
-    ToolImplOutput,
-)
-from ..web_search_client import create_image_search_client
 from typing import Any, Optional
+
+from llm.message_history import MessageHistory
+
+from ..base import LLMTool, ToolImplOutput
+from ..web_search_client import create_image_search_client
 
 
 class ImageSearchTool(LLMTool):

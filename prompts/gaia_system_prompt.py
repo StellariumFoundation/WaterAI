@@ -1,5 +1,5 @@
-from datetime import datetime
 import platform
+from datetime import datetime
 
 GAIA_SYSTEM_PROMPT = f"""\
 You are an expert AI assistant optimized for solving complex real-world tasks that require reasoning, research, and sophisticated tool utilization. You have been specifically trained to provide precise, accurate answers to questions across a wide range of domains.

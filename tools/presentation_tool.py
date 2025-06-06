@@ -1,18 +1,15 @@
 import asyncio
-from ii_agent.core.event import EventType, RealtimeEvent
-from ii_agent.llm.context_manager.base import ContextManager
-from ii_agent.tools.advanced_tools.image_search_tool import ImageSearchTool
-from ii_agent.tools.base import LLMTool
-from ii_agent.utils import WorkspaceManager
-from ii_agent.tools.bash_tool import create_bash_tool
-from ii_agent.tools.str_replace_tool_relative import StrReplaceEditorTool
-
-from ii_agent.llm.message_history import MessageHistory
-from ii_agent.tools.base import ToolImplOutput
-
+from copy import deepcopy
 from typing import Any, Optional
 
-from copy import deepcopy
+from ii_agent.core.event import EventType, RealtimeEvent
+from ii_agent.llm.context_manager.base import ContextManager
+from ii_agent.llm.message_history import MessageHistory
+from ii_agent.tools.advanced_tools.image_search_tool import ImageSearchTool
+from ii_agent.tools.base import LLMTool, ToolImplOutput
+from ii_agent.tools.bash_tool import create_bash_tool
+from ii_agent.tools.str_replace_tool_relative import StrReplaceEditorTool
+from ii_agent.utils import WorkspaceManager
 
 
 class PresentationTool(LLMTool):

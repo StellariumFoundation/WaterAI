@@ -1,12 +1,9 @@
 import asyncio
-
 from typing import Any, Optional
-from ii_agent.tools.base import (
-    LLMTool,
-    ToolImplOutput,
-)
+
 from ii_agent.browser.browser import Browser
 from ii_agent.llm.message_history import MessageHistory
+from ii_agent.tools.base import LLMTool, ToolImplOutput
 
 
 def get_event_loop():

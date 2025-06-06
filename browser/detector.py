@@ -26,4 +26,3 @@ class Detector(ABC):
         Returns:
             List of detected InteractiveElement objects.
         """
-        pass

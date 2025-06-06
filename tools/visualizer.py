@@ -1,13 +1,11 @@
 import mimetypes
 from typing import Any, Optional
 
-from ii_agent.tools.base import (
-    LLMTool,
-    ToolImplOutput,
-)
 from ii_agent.llm.message_history import MessageHistory
-from .utils import encode_image
+from ii_agent.tools.base import LLMTool, ToolImplOutput
 from ii_agent.utils import WorkspaceManager
+
+from .utils import encode_image
 
 
 class DisplayImageTool(LLMTool):

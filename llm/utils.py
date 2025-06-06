@@ -1,17 +1,16 @@
+from copy import deepcopy
+
+from anthropic.types import RedactedThinkingBlock as AnthropicRedactedThinkingBlock
+from anthropic.types import ThinkingBlock as AnthropicThinkingBlock
 from ii_agent.llm.base import (
     GeneralContentBlock,
+    ImageBlock,
     LLMMessages,
     TextPrompt,
     TextResult,
     ToolCall,
     ToolFormattedResult,
-    ImageBlock,
 )
-from anthropic.types import (
-    ThinkingBlock as AnthropicThinkingBlock,
-    RedactedThinkingBlock as AnthropicRedactedThinkingBlock,
-)
-from copy import deepcopy
 
 
 def _hide_base64_image_from_tool_output(tool_output: list[dict]) -> list[dict]:

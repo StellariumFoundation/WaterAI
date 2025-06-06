@@ -1,15 +1,7 @@
 import logging
 from unittest.mock import Mock
-import re
 
-from llm.base import (
-    ImageBlock,
-    TextPrompt,
-    TextResult,
-    LLMClient,
-    ToolCall,
-    ToolFormattedResult,
-)
+from llm.base import LLMClient, TextPrompt, TextResult, ToolCall, ToolFormattedResult
 from llm.context_manager.llm_summarizing import LLMSummarizingContextManager
 from llm.token_counter import TokenCounter
 

@@ -13,10 +13,8 @@ import logging
 from typing import Any, Dict, List, Optional, TypedDict
 
 from llm.message_history import MessageHistory
-from .base import (
-    LLMTool,
-    ToolImplOutput,
-)
+
+from .base import LLMTool, ToolImplOutput
 
 # Configure logging
 logger = logging.getLogger(__name__)

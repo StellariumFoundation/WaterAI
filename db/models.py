@@ -1,9 +1,10 @@
-from datetime import datetime
 import uuid
-from sqlalchemy import Column, String, DateTime, ForeignKey
-from sqlalchemy.orm import relationship, declarative_base
-from sqlalchemy.dialects.sqlite import JSON as SQLiteJSON
+from datetime import datetime
 from typing import Optional
+
+from sqlalchemy import Column, DateTime, ForeignKey, String
+from sqlalchemy.dialects.sqlite import JSON as SQLiteJSON
+from sqlalchemy.orm import declarative_base, relationship
 
 Base = declarative_base()
 

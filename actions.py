@@ -1,5 +1,6 @@
 import js
 
+
 def count_words(text: str) -> int:
     """Counts the number of words in a given string."""
     if not text:

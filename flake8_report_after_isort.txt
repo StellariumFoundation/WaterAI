@@ -1,0 +1,389 @@
+./agents/anthropic_fc.py:4:1: I100 Import statements are in the wrong order. 'import uuid' should be before 'from typing import Any, Optional'
+./agents/anthropic_fc.py:6:1: I202 Additional newline in a group of imports. 'from typing import List' is identified as Stdlib and 'import uuid' is identified as Stdlib.
+./agents/anthropic_fc.py:7:1: I201 Missing newline between import groups. 'from fastapi import WebSocket' is identified as Third Party and 'from typing import List' is identified as Stdlib.
+./agents/anthropic_fc.py:8:1: I201 Missing newline between import groups. 'from .base import BaseAgent' is identified as Application Relative and 'from fastapi import WebSocket' is identified as Third Party.
+./agents/anthropic_fc.py:9:1: I100 Import statements are in the wrong order. 'from core.event import EventType, RealtimeEvent' should be before 'from .base import BaseAgent' and in a different group.
+./agents/anthropic_fc.py:9:1: I201 Missing newline between import groups. 'from core.event import EventType, RealtimeEvent' is identified as Third Party and 'from .base import BaseAgent' is identified as Application Relative.
+./agents/anthropic_fc.py:10:1: I201 Missing newline between import groups. 'from llm.base import LLMClient, TextResult, ToolCallParameters' is identified as Third Party and 'from core.event import EventType, RealtimeEvent' is identified as Third Party.
+./agents/anthropic_fc.py:13:1: I101 Imported names are in the wrong order. Should be LLMTool, ToolImplOutput
+./agents/anthropic_fc.py:13:1: I201 Missing newline between import groups. 'from tools.base import ToolImplOutput, LLMTool' is identified as Third Party and 'from llm.message_history import MessageHistory' is identified as Third Party.
+./agents/anthropic_fc.py:15:1: I100 Import statements are in the wrong order. 'from db.manager import DatabaseManager' should be before 'from tools.utils import encode_image' and in a different group.
+./agents/anthropic_fc.py:15:1: I201 Missing newline between import groups. 'from db.manager import DatabaseManager' is identified as Third Party and 'from tools.utils import encode_image' is identified as Third Party.
+./agents/anthropic_fc.py:16:1: I201 Missing newline between import groups. 'from tools import AgentToolManager' is identified as Third Party and 'from db.manager import DatabaseManager' is identified as Third Party.
+./agents/anthropic_fc.py:17:1: I201 Missing newline between import groups. 'from utils.constants import COMPLETE_MESSAGE' is identified as Third Party and 'from tools import AgentToolManager' is identified as Third Party.
+./agents/anthropic_fc.py:18:1: I100 Import statements are in the wrong order. 'from utils import WorkspaceManager' should be before 'from utils.constants import COMPLETE_MESSAGE'
+./browser/browser.py:10:1: I201 Missing newline between import groups. 'from playwright.async_api import Browser' is identified as Third Party and 'from typing import Any, Optional' is identified as Stdlib.
+./browser/browser.py:22:1: I201 Missing newline between import groups. 'from tenacity import retry, retry_if_exception_type, stop_after_attempt, wait_exponential' is identified as Third Party and 'from playwright.async_api import Page, Playwright, StorageState, async_playwright' is identified as Third Party.
+./browser/browser.py:28:1: I201 Missing newline between import groups. 'from typing_extensions import TypedDict' is identified as Third Party and 'from tenacity import retry, retry_if_exception_type, stop_after_attempt, wait_exponential' is identified as Third Party.
+./browser/browser.py:38:1: I101 Imported names are in the wrong order. Should be filter_elements, is_pdf_url, put_highlight_elements_on_screenshot, scale_b64_image
+./browser/utils.py:3:1: I201 Missing newline between import groups. 'import requests' is identified as Third Party and 'import logging' is identified as Stdlib.
+./browser/utils.py:4:1: I100 Import statements are in the wrong order. 'from io import BytesIO' should be before 'import requests' and in a different group.
+./browser/utils.py:4:1: I201 Missing newline between import groups. 'from io import BytesIO' is identified as Stdlib and 'import requests' is identified as Third Party.
+./browser/utils.py:8:1: I201 Missing newline between import groups. 'from PIL import Image, ImageDraw, ImageFont' is identified as Third Party and 'from urllib.parse import urlparse' is identified as Stdlib.
+./core/event.py:2:1: I100 Import statements are in the wrong order. 'from typing import Any' should be before 'from pydantic import BaseModel' and in a different group.
+./core/event.py:2:1: I201 Missing newline between import groups. 'from typing import Any' is identified as Stdlib and 'from pydantic import BaseModel' is identified as Third Party.
+./core/event.py:3:1: I100 Import statements are in the wrong order. 'import enum' should be before 'from typing import Any'
+./db/manager.py:2:1: I101 Imported names are in the wrong order. Should be Generator, Optional
+./db/manager.py:3:1: I100 Import statements are in the wrong order. 'import uuid' should be before 'from typing import Optional, Generator'
+./db/manager.py:5:1: I201 Missing newline between import groups. 'from sqlalchemy import create_engine' is identified as Third Party and 'from pathlib import Path' is identified as Stdlib.
+./db/manager.py:6:1: I101 Imported names are in the wrong order. Should be Session, sessionmaker
+./db/manager.py:7:1: I101 Imported names are in the wrong order. Should be Base, Event, Session
+./db/manager.py:7:1: I100 Import statements are in the wrong order. 'from ii_agent.db.models import Base, Session, Event' should be before 'from sqlalchemy.orm import sessionmaker, Session' and in a different group.
+./db/manager.py:7:1: I201 Missing newline between import groups. 'from ii_agent.db.models import Base, Session, Event' is identified as Third Party and 'from sqlalchemy.orm import sessionmaker, Session' is identified as Third Party.
+./db/manager.py:8:1: I100 Import statements are in the wrong order. 'from ii_agent.core.event import EventType, RealtimeEvent' should be before 'from ii_agent.db.models import Base, Session, Event'
+./db/models.py:2:1: I100 Import statements are in the wrong order. 'import uuid' should be before 'from datetime import datetime'
+./db/models.py:3:1: I101 Imported names are in the wrong order. Should be Column, DateTime, ForeignKey, String
+./db/models.py:3:1: I201 Missing newline between import groups. 'from sqlalchemy import Column, String, DateTime, ForeignKey' is identified as Third Party and 'import uuid' is identified as Stdlib.
+./db/models.py:4:1: I101 Imported names are in the wrong order. Should be declarative_base, relationship
+./db/models.py:5:1: I100 Import statements are in the wrong order. 'from sqlalchemy.dialects.sqlite import JSON' should be before 'from sqlalchemy.orm import relationship, declarative_base'
+./db/models.py:6:1: I100 Import statements are in the wrong order. 'from typing import Optional' should be before 'from sqlalchemy.dialects.sqlite import JSON' and in a different group.
+./db/models.py:6:1: I201 Missing newline between import groups. 'from typing import Optional' is identified as Stdlib and 'from sqlalchemy.dialects.sqlite import JSON' is identified as Third Party.
+./llm/__init__.py:3:1: I100 Import statements are in the wrong order. 'from .anthropic import AnthropicDirectClient' should be before 'from .openai import OpenAIDirectClient'
+./llm/anthropic.py:3:1: I202 Additional newline in a group of imports. 'import random' is identified as Stdlib and 'import os' is identified as Stdlib.
+./llm/anthropic.py:6:1: I201 Missing newline between import groups. 'import anthropic' is identified as Third Party and 'from typing import Any, Tuple, cast' is identified as Stdlib.
+./llm/anthropic.py:10:1: I100 Import statements are in the wrong order. 'from anthropic import APIConnectionError' should be before 'from anthropic import NOT_GIVEN'
+./llm/anthropic.py:22:1: I101 Imported names are in the wrong order. Should be ImageBlockParam, RedactedThinkingBlock, TextBlock, ThinkingBlock
+./llm/anthropic.py:42:1: I101 Imported names are in the wrong order. Should be AssistantContentBlock, ImageBlock, LLMClient, LLMMessages, TextPrompt, TextResult, ToolCall, ToolFormattedResult, ToolParam, UserContentBlock, recursively_remove_invoke_tag
+./llm/anthropic.py:55:1: I100 Import statements are in the wrong order. 'from utils.constants import DEFAULT_MODEL' should be before 'from .base import LLMClient, AssistantContentBlock, ToolParam, TextPrompt, ToolCall, TextResult, LLMMessages, ToolFormattedResult, UserContentBlock, recursively_remove_invoke_tag, ImageBlock' and in a different group.
+./llm/anthropic.py:55:1: I201 Missing newline between import groups. 'from utils.constants import DEFAULT_MODEL' is identified as Third Party and 'from .base import LLMClient, AssistantContentBlock, ToolParam, TextPrompt, ToolCall, TextResult, LLMMessages, ToolFormattedResult, UserContentBlock, recursively_remove_invoke_tag, ImageBlock' is identified as Application Relative.
+./llm/base.py:2:1: I100 Import statements are in the wrong order. 'import json' should be before 'from abc import ABC, abstractmethod'
+./llm/base.py:5:1: I201 Missing newline between import groups. 'from dataclasses_json import DataClassJsonMixin' is identified as Third Party and 'from typing import Any, Tuple' is identified as Stdlib.
+./llm/base.py:6:1: I101 Imported names are in the wrong order. Should be RedactedThinkingBlock, ThinkingBlock
+./llm/base.py:6:1: I100 Import statements are in the wrong order. 'from anthropic.types import ThinkingBlock, RedactedThinkingBlock' should be before 'from dataclasses_json import DataClassJsonMixin' and in a different group.
+./llm/base.py:6:1: I201 Missing newline between import groups. 'from anthropic.types import ThinkingBlock, RedactedThinkingBlock' is identified as Third Party and 'from dataclasses_json import DataClassJsonMixin' is identified as Third Party.
+./llm/base.py:10:1: I100 Import statements are in the wrong order. 'from typing import Literal' should be before 'from anthropic.types import ThinkingBlock, RedactedThinkingBlock' and in a different group.
+./llm/base.py:10:1: I201 Missing newline between import groups. 'from typing import Literal' is identified as Stdlib and 'from anthropic.types import ThinkingBlock, RedactedThinkingBlock' is identified as Third Party.
+./llm/base.py:13:1: I100 Import statements are in the wrong order. 'import logging' should be before 'from typing import Literal'
+./llm/base.py:13:1: I202 Additional newline in a group of imports. 'import logging' is identified as Stdlib and 'from typing import Literal' is identified as Stdlib.
+./llm/context_manager/__init__.py:3:1: I100 Import statements are in the wrong order. 'from .amortized_forgetting import AmortizedForgettingContextManager' should be before 'from .pipeline import PipelineContextManager'
+./llm/context_manager/amortized_forgetting.py:2:1: I201 Missing newline between import groups. 'from ..base import GeneralContentBlock' is identified as Application Relative and 'import logging' is identified as Stdlib.
+./llm/context_manager/amortized_forgetting.py:3:1: I100 Import statements are in the wrong order. 'from .base import ContextManager' should be before 'from ..base import GeneralContentBlock'
+./llm/context_manager/base.py:5:1: I101 Imported names are in the wrong order. Should be AnthropicRedactedThinkingBlock, AnthropicThinkingBlock, GeneralContentBlock, ImageBlock, TextPrompt, TextResult, ToolCall, ToolFormattedResult
+./llm/context_manager/base.py:5:1: I201 Missing newline between import groups. 'from ..base import GeneralContentBlock, TextPrompt, TextResult, ToolCall, ToolFormattedResult, ImageBlock, AnthropicRedactedThinkingBlock, AnthropicThinkingBlock' is identified as Application Relative and 'from typing import final' is identified as Stdlib.
+./llm/context_manager/llm_summarizing.py:2:1: I101 Imported names are in the wrong order. Should be GeneralContentBlock, LLMClient, TextPrompt, TextResult
+./llm/context_manager/llm_summarizing.py:2:1: I201 Missing newline between import groups. 'from ..base import GeneralContentBlock, TextPrompt, TextResult, LLMClient' is identified as Application Relative and 'import logging' is identified as Stdlib.
+./llm/context_manager/llm_summarizing.py:3:1: I100 Import statements are in the wrong order. 'from .base import ContextManager' should be before 'from ..base import GeneralContentBlock, TextPrompt, TextResult, LLMClient'
+./llm/context_manager/pipeline.py:2:1: I201 Missing newline between import groups. 'from ..base import GeneralContentBlock' is identified as Application Relative and 'import logging' is identified as Stdlib.
+./llm/context_manager/pipeline.py:3:1: I100 Import statements are in the wrong order. 'from .base import ContextManager' should be before 'from ..base import GeneralContentBlock'
+./llm/gemini.py:3:1: I100 Import statements are in the wrong order. 'import random' should be before 'import time'
+./llm/gemini.py:5:1: I202 Additional newline in a group of imports. 'from typing import Any, Tuple' is identified as Stdlib and 'import random' is identified as Stdlib.
+./llm/gemini.py:6:1: I201 Missing newline between import groups. 'import google.generativeai' is identified as Third Party and 'from typing import Any, Tuple' is identified as Stdlib.
+./llm/gemini.py:7:1: I101 Imported names are in the wrong order. Should be AssistantContentBlock, ImageBlock, LLMClient, LLMMessages, TextPrompt, TextResult, ToolCall, ToolFormattedResult, ToolParam
+./llm/gemini.py:7:1: I201 Missing newline between import groups. 'from .base import LLMClient, AssistantContentBlock, ToolParam, TextPrompt, ToolCall, TextResult, LLMMessages, ToolFormattedResult, ImageBlock' is identified as Application Relative and 'import google.generativeai' is identified as Third Party.
+./llm/message_history.py:2:1: I101 Imported names are in the wrong order. Should be Any, Optional, cast
+./llm/message_history.py:3:1: I101 Imported names are in the wrong order. Should be AssistantContentBlock, GeneralContentBlock, ImageBlock, LLMMessages, TextPrompt, TextResult, ToolCall, ToolCallParameters, ToolFormattedResult
+./llm/message_history.py:3:1: I201 Missing newline between import groups. 'from .base import AssistantContentBlock, GeneralContentBlock, LLMMessages, TextPrompt, TextResult, ToolCall, ToolCallParameters, ToolFormattedResult, ImageBlock' is identified as Application Relative and 'from typing import Optional, cast, Any' is identified as Stdlib.
+./llm/openai.py:8:1: I201 Missing newline between import groups. 'import openai' is identified as Third Party and 'from typing import Any, Tuple, cast' is identified as Stdlib.
+./llm/openai.py:9:1: I100 Import statements are in the wrong order. 'import logging' should be before 'import openai' and in a different group.
+./llm/openai.py:9:1: I201 Missing newline between import groups. 'import logging' is identified as Stdlib and 'import openai' is identified as Third Party.
+./llm/openai.py:26:1: I101 Imported names are in the wrong order. Should be AssistantContentBlock, LLMClient, LLMMessages, TextPrompt, TextResult, ToolCall, ToolFormattedResult, ToolParam
+./llm/openai.py:213:21: F841 local variable 'openai_temperature' is assigned to but never used
+./llm/token_counter.py:2:1: I100 Import statements are in the wrong order. 'import base64' should be before 'import json'
+./llm/token_counter.py:4:1: I201 Missing newline between import groups. 'from PIL import Image' is identified as Third Party and 'from typing import Any, Union' is identified as Stdlib.
+./llm/token_counter.py:5:1: I100 Import statements are in the wrong order. 'import io' should be before 'from PIL import Image' and in a different group.
+./llm/token_counter.py:5:1: I201 Missing newline between import groups. 'import io' is identified as Stdlib and 'from PIL import Image' is identified as Third Party.
+./llm/utils.py:1:1: I101 Imported names are in the wrong order. Should be GeneralContentBlock, ImageBlock, LLMMessages, TextPrompt, TextResult, ToolCall, ToolFormattedResult
+./llm/utils.py:10:1: I101 Imported names are in the wrong order. Should be RedactedThinkingBlock, ThinkingBlock
+./llm/utils.py:10:1: I100 Import statements are in the wrong order. 'from anthropic.types import ThinkingBlock, RedactedThinkingBlock' should be before 'from ii_agent.llm.base import GeneralContentBlock, LLMMessages, TextPrompt, TextResult, ToolCall, ToolFormattedResult, ImageBlock' and in a different group.
+./llm/utils.py:10:1: I201 Missing newline between import groups. 'from anthropic.types import ThinkingBlock, RedactedThinkingBlock' is identified as Third Party and 'from ii_agent.llm.base import GeneralContentBlock, LLMMessages, TextPrompt, TextResult, ToolCall, ToolFormattedResult, ImageBlock' is identified as Third Party.
+./llm/utils.py:14:1: I100 Import statements are in the wrong order. 'from copy import deepcopy' should be before 'from anthropic.types import ThinkingBlock, RedactedThinkingBlock' and in a different group.
+./llm/utils.py:14:1: I201 Missing newline between import groups. 'from copy import deepcopy' is identified as Stdlib and 'from anthropic.types import ThinkingBlock, RedactedThinkingBlock' is identified as Third Party.
+./prompts/gaia_system_prompt.py:2:1: I100 Import statements are in the wrong order. 'import platform' should be before 'from datetime import datetime'
+./prompts/system_prompt.py:2:1: I100 Import statements are in the wrong order. 'import platform' should be before 'from datetime import datetime'
+./run_gaia.py:10:1: I100 Import statements are in the wrong order. 'import json' should be before 'import os'
+./run_gaia.py:11:1: I100 Import statements are in the wrong order. 'import argparse' should be before 'import json'
+./run_gaia.py:14:1: I100 Import statements are in the wrong order. 'import shutil' should be before 'from pathlib import Path'
+./run_gaia.py:16:1: I100 Import statements are in the wrong order. 'import logging' should be before 'from threading import Lock'
+./run_gaia.py:17:1: I201 Missing newline between import groups. 'import pandas' is identified as Third Party and 'import logging' is identified as Stdlib.
+./run_gaia.py:18:1: I201 Missing newline between import groups. 'import sqlalchemy' is identified as Third Party and 'import pandas' is identified as Third Party.
+./run_gaia.py:19:1: I201 Missing newline between import groups. 'from tqdm import tqdm' is identified as Third Party and 'import sqlalchemy' is identified as Third Party.
+./run_gaia.py:20:1: I101 Imported names are in the wrong order. Should be Dataset, load_dataset
+./run_gaia.py:20:1: I100 Import statements are in the wrong order. 'from datasets import load_dataset, Dataset' should be before 'from tqdm import tqdm' and in a different group.
+./run_gaia.py:20:1: I201 Missing newline between import groups. 'from datasets import load_dataset, Dataset' is identified as Third Party and 'from tqdm import tqdm' is identified as Third Party.
+./run_gaia.py:21:1: I201 Missing newline between import groups. 'from huggingface_hub import snapshot_download' is identified as Third Party and 'from datasets import load_dataset, Dataset' is identified as Third Party.
+./run_gaia.py:22:1: I100 Import statements are in the wrong order. 'import uuid' should be before 'from huggingface_hub import snapshot_download' and in a different group.
+./run_gaia.py:22:1: I201 Missing newline between import groups. 'import uuid' is identified as Stdlib and 'from huggingface_hub import snapshot_download' is identified as Third Party.
+./run_gaia.py:23:1: I100 Import statements are in the wrong order. 'import asyncio' should be before 'import uuid'
+./run_gaia.py:24:1: I101 Imported names are in the wrong order. Should be Event, Session
+./run_gaia.py:24:1: I201 Missing newline between import groups. 'from db.models import Session, Event' is identified as Third Party and 'import asyncio' is identified as Stdlib.
+./run_gaia.py:25:1: I100 Import statements are in the wrong order. 'from agents.anthropic_fc import AnthropicFC' should be before 'from db.models import Session, Event' and in a different group.
+./run_gaia.py:25:1: I201 Missing newline between import groups. 'from agents.anthropic_fc import AnthropicFC' is identified as Third Party and 'from db.models import Session, Event' is identified as Third Party.
+./run_gaia.py:26:1: I201 Missing newline between import groups. 'from browser.browser import Browser' is identified as Third Party and 'from agents.anthropic_fc import AnthropicFC' is identified as Third Party.
+./run_gaia.py:27:1: I201 Missing newline between import groups. 'from prompts.gaia_system_prompt import GAIA_SYSTEM_PROMPT' is identified as Third Party and 'from browser.browser import Browser' is identified as Third Party.
+./run_gaia.py:28:1: I201 Missing newline between import groups. 'from tools.bash_tool import BashTool' is identified as Third Party and 'from prompts.gaia_system_prompt import GAIA_SYSTEM_PROMPT' is identified as Third Party.
+./run_gaia.py:42:1: I101 Imported names are in the wrong order. Should be AudioTranscribeTool, AudioUnderstandingTool, YoutubeVideoUnderstandingTool
+./run_gaia.py:42:1: I100 Import statements are in the wrong order. 'from tools.advanced_tools.gemini import AudioUnderstandingTool, AudioTranscribeTool, YoutubeVideoUnderstandingTool' should be before 'from tools.browser_tools import BrowserClickTool, BrowserEnterTextTool, BrowserGetSelectOptionsTool, BrowserNavigationTool, BrowserPressKeyTool, BrowserRestartTool, BrowserScrollDownTool, BrowserScrollUpTool, BrowserSelectDropdownOptionTool, BrowserViewTool, BrowserWaitTool'
+./run_gaia.py:53:1: I201 Missing newline between import groups. 'from utils import WorkspaceManager' is identified as Third Party and 'from tools.web_search_tool import WebSearchTool' is identified as Third Party.
+./run_gaia.py:54:1: I100 Import statements are in the wrong order. 'from llm import get_client' should be before 'from utils import WorkspaceManager' and in a different group.
+./run_gaia.py:54:1: I201 Missing newline between import groups. 'from llm import get_client' is identified as Third Party and 'from utils import WorkspaceManager' is identified as Third Party.
+./run_gaia.py:57:1: I201 Missing newline between import groups. 'from utils.constants import DEFAULT_MODEL, UPLOAD_FOLDER_NAME' is identified as Third Party and 'from llm.token_counter import TokenCounter' is identified as Third Party.
+./run_gaia.py:58:1: I100 Import statements are in the wrong order. 'from utils import parse_common_args' should be before 'from utils.constants import DEFAULT_MODEL, UPLOAD_FOLDER_NAME'
+./run_gaia.py:59:1: I100 Import statements are in the wrong order. 'from db.manager import DatabaseManager' should be before 'from utils import parse_common_args' and in a different group.
+./run_gaia.py:59:1: I201 Missing newline between import groups. 'from db.manager import DatabaseManager' is identified as Third Party and 'from utils import parse_common_args' is identified as Third Party.
+./run_gaia.py:60:1: I101 Imported names are in the wrong order. Should be EventType, RealtimeEvent
+./run_gaia.py:60:1: I100 Import statements are in the wrong order. 'from core.event import RealtimeEvent, EventType' should be before 'from db.manager import DatabaseManager' and in a different group.
+./run_gaia.py:60:1: I201 Missing newline between import groups. 'from core.event import RealtimeEvent, EventType' is identified as Third Party and 'from db.manager import DatabaseManager' is identified as Third Party.
+./run_gaia.py:61:1: I201 Missing newline between import groups. 'from tools.youtube_transcript_tool import YoutubeTranscriptTool' is identified as Third Party and 'from core.event import RealtimeEvent, EventType' is identified as Third Party.
+./tests/llm/context_manager/test_llm_summarizing.py:3:1: I100 Import statements are in the wrong order. 'import re' should be before 'from unittest.mock import Mock'
+./tests/llm/context_manager/test_llm_summarizing.py:3:1: F401 're' imported but unused
+./tests/llm/context_manager/test_llm_summarizing.py:5:1: I101 Imported names are in the wrong order. Should be ImageBlock, LLMClient, TextPrompt, TextResult, ToolCall, ToolFormattedResult
+./tests/llm/context_manager/test_llm_summarizing.py:5:1: F401 'llm.base.ImageBlock' imported but unused
+./tests/run_gaia.py:10:1: I100 Import statements are in the wrong order. 'import json' should be before 'import os'
+./tests/run_gaia.py:11:1: I100 Import statements are in the wrong order. 'import argparse' should be before 'import json'
+./tests/run_gaia.py:14:1: I100 Import statements are in the wrong order. 'import shutil' should be before 'from pathlib import Path'
+./tests/run_gaia.py:16:1: I100 Import statements are in the wrong order. 'import logging' should be before 'from threading import Lock'
+./tests/run_gaia.py:17:1: I201 Missing newline between import groups. 'import pandas' is identified as Third Party and 'import logging' is identified as Stdlib.
+./tests/run_gaia.py:18:1: I201 Missing newline between import groups. 'import sqlalchemy' is identified as Third Party and 'import pandas' is identified as Third Party.
+./tests/run_gaia.py:19:1: I201 Missing newline between import groups. 'from tqdm import tqdm' is identified as Third Party and 'import sqlalchemy' is identified as Third Party.
+./tests/run_gaia.py:20:1: I101 Imported names are in the wrong order. Should be Dataset, load_dataset
+./tests/run_gaia.py:20:1: I100 Import statements are in the wrong order. 'from datasets import load_dataset, Dataset' should be before 'from tqdm import tqdm' and in a different group.
+./tests/run_gaia.py:20:1: I201 Missing newline between import groups. 'from datasets import load_dataset, Dataset' is identified as Third Party and 'from tqdm import tqdm' is identified as Third Party.
+./tests/run_gaia.py:21:1: I201 Missing newline between import groups. 'from huggingface_hub import snapshot_download' is identified as Third Party and 'from datasets import load_dataset, Dataset' is identified as Third Party.
+./tests/run_gaia.py:22:1: I100 Import statements are in the wrong order. 'import uuid' should be before 'from huggingface_hub import snapshot_download' and in a different group.
+./tests/run_gaia.py:22:1: I201 Missing newline between import groups. 'import uuid' is identified as Stdlib and 'from huggingface_hub import snapshot_download' is identified as Third Party.
+./tests/run_gaia.py:23:1: I100 Import statements are in the wrong order. 'import asyncio' should be before 'import uuid'
+./tests/run_gaia.py:24:1: I101 Imported names are in the wrong order. Should be Event, Session
+./tests/run_gaia.py:24:1: I201 Missing newline between import groups. 'from ii_agent.db.models import Session, Event' is identified as Third Party and 'import asyncio' is identified as Stdlib.
+./tests/run_gaia.py:25:1: I100 Import statements are in the wrong order. 'from ii_agent.agents.anthropic_fc import AnthropicFC' should be before 'from ii_agent.db.models import Session, Event'
+./tests/run_gaia.py:42:1: I101 Imported names are in the wrong order. Should be AudioTranscribeTool, AudioUnderstandingTool, YoutubeVideoUnderstandingTool
+./tests/run_gaia.py:42:1: I100 Import statements are in the wrong order. 'from ii_agent.tools.advanced_tools.gemini import AudioUnderstandingTool, AudioTranscribeTool, YoutubeVideoUnderstandingTool' should be before 'from ii_agent.tools.browser_tools import BrowserClickTool, BrowserEnterTextTool, BrowserGetSelectOptionsTool, BrowserNavigationTool, BrowserPressKeyTool, BrowserRestartTool, BrowserScrollDownTool, BrowserScrollUpTool, BrowserSelectDropdownOptionTool, BrowserViewTool, BrowserWaitTool'
+./tests/run_gaia.py:54:1: I100 Import statements are in the wrong order. 'from ii_agent.llm import get_client' should be before 'from ii_agent.utils import WorkspaceManager'
+./tests/run_gaia.py:58:1: I201 Missing newline between import groups. 'from utils import parse_common_args' is identified as Third Party and 'from ii_agent.utils.constants import DEFAULT_MODEL, TOKEN_BUDGET, UPLOAD_FOLDER_NAME' is identified as Third Party.
+./tests/run_gaia.py:59:1: I100 Import statements are in the wrong order. 'from ii_agent.db.manager import DatabaseManager' should be before 'from utils import parse_common_args' and in a different group.
+./tests/run_gaia.py:59:1: I201 Missing newline between import groups. 'from ii_agent.db.manager import DatabaseManager' is identified as Third Party and 'from utils import parse_common_args' is identified as Third Party.
+./tests/run_gaia.py:60:1: I101 Imported names are in the wrong order. Should be EventType, RealtimeEvent
+./tests/run_gaia.py:60:1: I100 Import statements are in the wrong order. 'from ii_agent.core.event import RealtimeEvent, EventType' should be before 'from ii_agent.db.manager import DatabaseManager'
+./tests/test_message_history.py:2:1: I100 Import statements are in the wrong order. 'from llm.base import TextPrompt, TextResult, ToolCall, ToolFormattedResult' should be before 'import pytest' and in a different group.
+./tests/test_message_history.py:2:1: I201 Missing newline between import groups. 'from llm.base import TextPrompt, TextResult, ToolCall, ToolFormattedResult' is identified as Third Party and 'import pytest' is identified as Third Party.
+./tests/tools/test_bash_tool.py:8:1: I100 Import statements are in the wrong order. 'from pathlib import Path' should be before 'import pytest' and in a different group.
+./tests/tools/test_bash_tool.py:8:1: I201 Missing newline between import groups. 'from pathlib import Path' is identified as Stdlib and 'import pytest' is identified as Third Party.
+./tests/tools/test_bash_tool.py:9:1: I100 Import statements are in the wrong order. 'import unittest' should be before 'from pathlib import Path'
+./tests/tools/test_bash_tool.py:10:1: I101 Imported names are in the wrong order. Should be MagicMock, patch
+./tests/tools/test_bash_tool.py:14:1: I101 Imported names are in the wrong order. Should be BashTool, CommandFilter, DockerCommandFilter, create_bash_tool, run_command, start_persistent_shell
+./tests/tools/test_str_replace_tool.py:2:1: I201 Missing newline between import groups. 'from tools.str_replace_tool_relative import StrReplaceEditorTool' is identified as Third Party and 'from unittest.mock import MagicMock, patch' is identified as Stdlib.
+./tools/__init__.py:2:1: I100 Import statements are in the wrong order. 'from .str_replace_tool_relative import StrReplaceEditorTool' should be before 'from .visit_webpage_tool import VisitWebpageTool'
+./tools/__init__.py:3:1: I100 Import statements are in the wrong order. 'from .sequential_thinking_tool import SequentialThinkingTool' should be before 'from .str_replace_tool_relative import StrReplaceEditorTool'
+./tools/__init__.py:4:1: I100 Import statements are in the wrong order. 'from .bash_tool import BashTool' should be before 'from .sequential_thinking_tool import SequentialThinkingTool'
+./tools/__init__.py:5:1: I101 Imported names are in the wrong order. Should be AgentToolManager, get_system_tools
+./tools/advanced_tools/audio_tool.py:7:1: I201 Missing newline between import groups. 'from openai import APIError, AzureOpenAI' is identified as Third Party and 'from typing import Any, Optional' is identified as Stdlib.
+./tools/advanced_tools/audio_tool.py:9:1: I100 Import statements are in the wrong order. 'from ii_agent.tools.base import LLMTool, ToolImplOutput' should be before 'from openai import APIError, AzureOpenAI' and in a different group.
+./tools/advanced_tools/audio_tool.py:14:1: I202 Additional newline in a group of imports. 'from ii_agent.utils import WorkspaceManager' is identified as Third Party and 'from ii_agent.tools.base import LLMTool, ToolImplOutput' is identified as Third Party.
+./tools/advanced_tools/audio_tool.py:15:1: I100 Import statements are in the wrong order. 'from ii_agent.llm.message_history import MessageHistory' should be before 'from ii_agent.utils import WorkspaceManager'
+./tools/advanced_tools/gemini/__init__.py:2:1: I100 Import statements are in the wrong order. 'from .audio_tool import AudioTranscribeTool, AudioUnderstandingTool' should be before 'from .base import GeminiTool'
+./tools/advanced_tools/gemini/audio_tool.py:2:1: I201 Missing newline between import groups. 'from google.genai import types' is identified as Third Party and 'from typing import Any, Optional' is identified as Stdlib.
+./tools/advanced_tools/gemini/audio_tool.py:3:1: I201 Missing newline between import groups. 'from ii_agent.llm.message_history import MessageHistory' is identified as Third Party and 'from google.genai import types' is identified as Third Party.
+./tools/advanced_tools/gemini/audio_tool.py:5:1: I100 Import statements are in the wrong order. 'from ii_agent.tools.advanced_tools.gemini import GeminiTool' should be before 'from ii_agent.tools.base import ToolImplOutput'
+./tools/advanced_tools/gemini/base.py:3:1: I202 Additional newline in a group of imports. 'from typing import Optional' is identified as Stdlib and 'import os' is identified as Stdlib.
+./tools/advanced_tools/gemini/base.py:4:1: I201 Missing newline between import groups. 'from google import genai' is identified as Third Party and 'from typing import Optional' is identified as Stdlib.
+./tools/advanced_tools/gemini/base.py:5:1: I201 Missing newline between import groups. 'from ii_agent.tools.base import LLMTool' is identified as Third Party and 'from google import genai' is identified as Third Party.
+./tools/advanced_tools/gemini/video_tool.py:2:1: I201 Missing newline between import groups. 'from google.genai import types' is identified as Third Party and 'from typing import Any, Optional' is identified as Stdlib.
+./tools/advanced_tools/gemini/video_tool.py:3:1: I201 Missing newline between import groups. 'from ii_agent.llm.message_history import MessageHistory' is identified as Third Party and 'from google.genai import types' is identified as Third Party.
+./tools/advanced_tools/gemini/video_tool.py:5:1: I100 Import statements are in the wrong order. 'from ii_agent.tools.advanced_tools.gemini import GeminiTool' should be before 'from ii_agent.tools.base import ToolImplOutput'
+./tools/advanced_tools/image_gen_tool.py:12:1: I101 Imported names are in the wrong order. Should be LLMTool, MessageHistory, ToolImplOutput
+./tools/advanced_tools/image_gen_tool.py:12:1: I100 Import statements are in the wrong order. 'from ii_agent.tools.base import MessageHistory, LLMTool, ToolImplOutput' should be before 'from vertexai.preview.vision_models import ImageGenerationModel' and in a different group.
+./tools/advanced_tools/image_search_tool.py:2:1: I201 Missing newline between import groups. 'from ..base import LLMTool, ToolImplOutput' is identified as Application Relative and 'from llm.message_history import MessageHistory' is identified as Third Party.
+./tools/advanced_tools/image_search_tool.py:7:1: I100 Import statements are in the wrong order. 'from typing import Any, Optional' should be before 'from ..web_search_client import create_image_search_client' and in a different group.
+./tools/advanced_tools/image_search_tool.py:7:1: I201 Missing newline between import groups. 'from typing import Any, Optional' is identified as Stdlib and 'from ..web_search_client import create_image_search_client' is identified as Application Relative.
+./tools/advanced_tools/pdf_tool.py:3:1: I201 Missing newline between import groups. 'import pymupdf' is identified as Third Party and 'from typing import Any, Optional' is identified as Stdlib.
+./tools/advanced_tools/pdf_tool.py:5:1: I100 Import statements are in the wrong order. 'from ii_agent.llm.message_history import MessageHistory' should be before 'import pymupdf' and in a different group.
+./tools/advanced_tools/video_gen_tool.py:11:1: I100 Import statements are in the wrong order. 'from google.cloud import storage' should be before 'from google.genai import types'
+./tools/advanced_tools/video_gen_tool.py:11:1: I202 Additional newline in a group of imports. 'from google.cloud import storage' is identified as Third Party and 'from google.genai import types' is identified as Third Party.
+./tools/advanced_tools/video_gen_tool.py:12:1: I100 Import statements are in the wrong order. 'from google.auth.exceptions import DefaultCredentialsError' should be before 'from google.cloud import storage'
+./tools/advanced_tools/video_gen_tool.py:14:1: I101 Imported names are in the wrong order. Should be LLMTool, MessageHistory, ToolImplOutput
+./tools/base.py:6:1: I100 Import statements are in the wrong order. 'from anthropic import BadRequestError' should be before 'import jsonschema' and in a different group.
+./tools/base.py:6:1: I201 Missing newline between import groups. 'from anthropic import BadRequestError' is identified as Third Party and 'import jsonschema' is identified as Third Party.
+./tools/base.py:7:1: I201 Missing newline between import groups. 'from typing_extensions import final' is identified as Third Party and 'from anthropic import BadRequestError' is identified as Third Party.
+./tools/base.py:9:1: I100 Import statements are in the wrong order. 'from llm.base import ToolParam' should be before 'from typing_extensions import final' and in a different group.
+./tools/bash_tool.py:15:1: I100 Import statements are in the wrong order. 'import re' should be before 'import pexpect' and in a different group.
+./tools/bash_tool.py:15:1: I201 Missing newline between import groups. 'import re' is identified as Stdlib and 'import pexpect' is identified as Third Party.
+./tools/bash_tool.py:19:1: I201 Missing newline between import groups. 'from .base import LLMTool, ToolImplOutput' is identified as Application Relative and 'from llm.message_history import MessageHistory' is identified as Third Party.
+./tools/browser_tools/__init__.py:6:1: I100 Import statements are in the wrong order. 'from .view import BrowserViewTool' should be before 'from .wait import BrowserWaitTool'
+./tools/browser_tools/__init__.py:7:1: I100 Import statements are in the wrong order. 'from .scroll import BrowserScrollDownTool, BrowserScrollUpTool' should be before 'from .view import BrowserViewTool'
+./tools/browser_tools/__init__.py:8:1: I101 Imported names are in the wrong order. Should be BrowserOpenNewTabTool, BrowserSwitchTabTool
+./tools/browser_tools/__init__.py:9:1: I100 Import statements are in the wrong order. 'from .navigate import BrowserNavigationTool, BrowserRestartTool' should be before 'from .tab import BrowserSwitchTabTool, BrowserOpenNewTabTool'
+./tools/browser_tools/__init__.py:10:1: I100 Import statements are in the wrong order. 'from .dropdown import BrowserGetSelectOptionsTool, BrowserSelectDropdownOptionTool' should be before 'from .navigate import BrowserNavigationTool, BrowserRestartTool'
+./tools/browser_tools/base.py:3:1: I202 Additional newline in a group of imports. 'from typing import Any, Optional' is identified as Stdlib and 'import asyncio' is identified as Stdlib.
+./tools/browser_tools/base.py:4:1: I201 Missing newline between import groups. 'from ii_agent.tools.base import LLMTool, ToolImplOutput' is identified as Third Party and 'from typing import Any, Optional' is identified as Stdlib.
+./tools/browser_tools/base.py:8:1: I100 Import statements are in the wrong order. 'from ii_agent.browser.browser import Browser' should be before 'from ii_agent.tools.base import LLMTool, ToolImplOutput'
+./tools/browser_tools/click.py:3:1: I202 Additional newline in a group of imports. 'from typing import Any, Optional' is identified as Stdlib and 'import asyncio' is identified as Stdlib.
+./tools/browser_tools/click.py:4:1: I201 Missing newline between import groups. 'from ii_agent.browser.browser import Browser' is identified as Third Party and 'from typing import Any, Optional' is identified as Stdlib.
+./tools/browser_tools/click.py:7:1: I100 Import statements are in the wrong order. 'from ii_agent.llm.message_history import MessageHistory' should be before 'from ii_agent.tools.browser_tools import BrowserTool, utils'
+./tools/browser_tools/dropdown.py:3:1: I202 Additional newline in a group of imports. 'from typing import Any, Optional' is identified as Stdlib and 'import json' is identified as Stdlib.
+./tools/browser_tools/dropdown.py:4:1: I201 Missing newline between import groups. 'from ii_agent.browser.browser import Browser' is identified as Third Party and 'from typing import Any, Optional' is identified as Stdlib.
+./tools/browser_tools/dropdown.py:7:1: I100 Import statements are in the wrong order. 'from ii_agent.llm.message_history import MessageHistory' should be before 'from ii_agent.tools.browser_tools import BrowserTool, utils'
+./tools/browser_tools/enter_text.py:3:1: I202 Additional newline in a group of imports. 'from typing import Any, Optional' is identified as Stdlib and 'import asyncio' is identified as Stdlib.
+./tools/browser_tools/enter_text.py:4:1: I201 Missing newline between import groups. 'from ii_agent.browser.browser import Browser' is identified as Third Party and 'from typing import Any, Optional' is identified as Stdlib.
+./tools/browser_tools/enter_text.py:7:1: I100 Import statements are in the wrong order. 'from ii_agent.llm.message_history import MessageHistory' should be before 'from ii_agent.tools.browser_tools import BrowserTool, utils'
+./tools/browser_tools/navigate.py:3:1: I202 Additional newline in a group of imports. 'from typing import Any, Optional' is identified as Stdlib and 'import asyncio' is identified as Stdlib.
+./tools/browser_tools/navigate.py:4:1: I201 Missing newline between import groups. 'from playwright.async_api import TimeoutError' is identified as Third Party and 'from typing import Any, Optional' is identified as Stdlib.
+./tools/browser_tools/navigate.py:5:1: I100 Import statements are in the wrong order. 'from ii_agent.browser.browser import Browser' should be before 'from playwright.async_api import TimeoutError' and in a different group.
+./tools/browser_tools/navigate.py:5:1: I201 Missing newline between import groups. 'from ii_agent.browser.browser import Browser' is identified as Third Party and 'from playwright.async_api import TimeoutError' is identified as Third Party.
+./tools/browser_tools/navigate.py:8:1: I100 Import statements are in the wrong order. 'from ii_agent.llm.message_history import MessageHistory' should be before 'from ii_agent.tools.browser_tools import BrowserTool, utils'
+./tools/browser_tools/press_key.py:3:1: I202 Additional newline in a group of imports. 'from typing import Any, Optional' is identified as Stdlib and 'import asyncio' is identified as Stdlib.
+./tools/browser_tools/press_key.py:4:1: I201 Missing newline between import groups. 'from ii_agent.browser.browser import Browser' is identified as Third Party and 'from typing import Any, Optional' is identified as Stdlib.
+./tools/browser_tools/press_key.py:7:1: I100 Import statements are in the wrong order. 'from ii_agent.llm.message_history import MessageHistory' should be before 'from ii_agent.tools.browser_tools import BrowserTool, utils'
+./tools/browser_tools/scroll.py:3:1: I202 Additional newline in a group of imports. 'from typing import Any, Optional' is identified as Stdlib and 'import asyncio' is identified as Stdlib.
+./tools/browser_tools/scroll.py:4:1: I201 Missing newline between import groups. 'from ii_agent.tools.browser_tools import BrowserTool, utils' is identified as Third Party and 'from typing import Any, Optional' is identified as Stdlib.
+./tools/browser_tools/scroll.py:5:1: I100 Import statements are in the wrong order. 'from ii_agent.browser.browser import Browser' should be before 'from ii_agent.tools.browser_tools import BrowserTool, utils'
+./tools/browser_tools/scroll.py:8:1: I100 Import statements are in the wrong order. 'from ii_agent.llm.message_history import MessageHistory' should be before 'from ii_agent.tools.base import ToolImplOutput'
+./tools/browser_tools/tab.py:3:1: I202 Additional newline in a group of imports. 'from typing import Any, Optional' is identified as Stdlib and 'import asyncio' is identified as Stdlib.
+./tools/browser_tools/tab.py:4:1: I201 Missing newline between import groups. 'from ii_agent.browser.browser import Browser' is identified as Third Party and 'from typing import Any, Optional' is identified as Stdlib.
+./tools/browser_tools/tab.py:7:1: I100 Import statements are in the wrong order. 'from ii_agent.llm.message_history import MessageHistory' should be before 'from ii_agent.tools.browser_tools import BrowserTool, utils'
+./tools/browser_tools/view.py:2:1: I201 Missing newline between import groups. 'from ii_agent.browser.browser import Browser' is identified as Third Party and 'from typing import Any, Optional' is identified as Stdlib.
+./tools/browser_tools/view.py:5:1: I100 Import statements are in the wrong order. 'from ii_agent.llm.message_history import MessageHistory' should be before 'from ii_agent.tools.browser_tools import BrowserTool, utils'
+./tools/browser_tools/wait.py:3:1: I202 Additional newline in a group of imports. 'from typing import Any, Optional' is identified as Stdlib and 'import asyncio' is identified as Stdlib.
+./tools/browser_tools/wait.py:4:1: I201 Missing newline between import groups. 'from ii_agent.browser.browser import Browser' is identified as Third Party and 'from typing import Any, Optional' is identified as Stdlib.
+./tools/browser_tools/wait.py:7:1: I100 Import statements are in the wrong order. 'from ii_agent.llm.message_history import MessageHistory' should be before 'from ii_agent.tools.browser_tools import BrowserTool, utils'
+./tools/complete_tool.py:4:1: I201 Missing newline between import groups. 'from llm.message_history import MessageHistory' is identified as Third Party and 'from typing import Any, Optional' is identified as Stdlib.
+./tools/complete_tool.py:5:1: I201 Missing newline between import groups. 'from .base import LLMTool, ToolImplOutput' is identified as Application Relative and 'from llm.message_history import MessageHistory' is identified as Third Party.
+./tools/deep_research_tool.py:4:1: I201 Missing newline between import groups. 'from ii_agent.llm.message_history import MessageHistory' is identified as Third Party and 'from typing import Any, Optional' is identified as Stdlib.
+./tools/deep_research_tool.py:6:1: I201 Missing newline between import groups. 'from ii_researcher.reasoning.agent import ReasoningAgent' is identified as Third Party and 'from ii_agent.tools.base import LLMTool, ToolImplOutput' is identified as Third Party.
+./tools/deep_research_tool.py:8:1: I100 Import statements are in the wrong order. 'import asyncio' should be before 'from ii_researcher.reasoning.builders.report import ReportType' and in a different group.
+./tools/deep_research_tool.py:8:1: I201 Missing newline between import groups. 'import asyncio' is identified as Stdlib and 'from ii_researcher.reasoning.builders.report import ReportType' is identified as Third Party.
+./tools/markdown_converter.py:21:1: I201 Missing newline between import groups. 'import markdownify' is identified as Third Party and 'import mammoth' is identified as Third Party.
+./tools/markdown_converter.py:22:1: I201 Missing newline between import groups. 'import pandas' is identified as Third Party and 'import markdownify' is identified as Third Party.
+./tools/markdown_converter.py:23:1: I201 Missing newline between import groups. 'import pdfminer' is identified as Third Party and 'import pandas' is identified as Third Party.
+./tools/markdown_converter.py:25:1: I201 Missing newline between import groups. 'import pptx' is identified as Third Party and 'import pdfminer.high_level' is identified as Third Party.
+./tools/markdown_converter.py:29:1: I201 Missing newline between import groups. 'import pydub' is identified as Third Party and 'import puremagic' is identified as Third Party.
+./tools/markdown_converter.py:30:1: I201 Missing newline between import groups. 'import requests' is identified as Third Party and 'import pydub' is identified as Third Party.
+./tools/markdown_converter.py:31:1: I201 Missing newline between import groups. 'import speech_recognition' is identified as Third Party and 'import requests' is identified as Third Party.
+./tools/markdown_converter.py:32:1: I100 Import statements are in the wrong order. 'from bs4 import BeautifulSoup' should be before 'import speech_recognition' and in a different group.
+./tools/markdown_converter.py:32:1: I201 Missing newline between import groups. 'from bs4 import BeautifulSoup' is identified as Third Party and 'import speech_recognition' is identified as Third Party.
+./tools/markdown_converter.py:33:1: I201 Missing newline between import groups. 'from youtube_transcript_api import YouTubeTranscriptApi' is identified as Third Party and 'from bs4 import BeautifulSoup' is identified as Third Party.
+./tools/memory/compactify_memory.py:2:1: I201 Missing newline between import groups. 'from llm.context_manager.base import ContextManager' is identified as Third Party and 'from typing import Any' is identified as Stdlib.
+./tools/memory/compactify_memory.py:4:1: I201 Missing newline between import groups. 'from ..base import LLMTool, ToolImplOutput' is identified as Application Relative and 'from llm.message_history import MessageHistory' is identified as Third Party.
+./tools/memory/simple_memory.py:1:1: I101 Imported names are in the wrong order. Should be Any, Dict, Optional
+./tools/memory/simple_memory.py:2:1: I201 Missing newline between import groups. 'from llm.message_history import MessageHistory' is identified as Third Party and 'from typing import Any, Optional, Dict' is identified as Stdlib.
+./tools/memory/simple_memory.py:3:1: I201 Missing newline between import groups. 'from ..base import LLMTool, ToolImplOutput' is identified as Application Relative and 'from llm.message_history import MessageHistory' is identified as Third Party.
+./tools/message_tool.py:2:1: I201 Missing newline between import groups. 'from llm.message_history import MessageHistory' is identified as Third Party and 'from typing import Any, Optional' is identified as Stdlib.
+./tools/message_tool.py:3:1: I201 Missing newline between import groups. 'from .base import LLMTool, ToolImplOutput' is identified as Application Relative and 'from llm.message_history import MessageHistory' is identified as Third Party.
+./tools/presentation_tool.py:2:1: I201 Missing newline between import groups. 'from ii_agent.core.event import EventType, RealtimeEvent' is identified as Third Party and 'import asyncio' is identified as Stdlib.
+./tools/presentation_tool.py:7:1: I100 Import statements are in the wrong order. 'from ii_agent.tools.bash_tool import create_bash_tool' should be before 'from ii_agent.utils import WorkspaceManager'
+./tools/presentation_tool.py:10:1: I100 Import statements are in the wrong order. 'from ii_agent.llm.message_history import MessageHistory' should be before 'from ii_agent.tools.str_replace_tool_relative import StrReplaceEditorTool'
+./tools/presentation_tool.py:10:1: I202 Additional newline in a group of imports. 'from ii_agent.llm.message_history import MessageHistory' is identified as Third Party and 'from ii_agent.tools.str_replace_tool_relative import StrReplaceEditorTool' is identified as Third Party.
+./tools/presentation_tool.py:13:1: I100 Import statements are in the wrong order. 'from typing import Any, Optional' should be before 'from ii_agent.tools.base import ToolImplOutput' and in a different group.
+./tools/presentation_tool.py:15:1: I100 Import statements are in the wrong order. 'from copy import deepcopy' should be before 'from typing import Any, Optional'
+./tools/presentation_tool.py:15:1: I202 Additional newline in a group of imports. 'from copy import deepcopy' is identified as Stdlib and 'from typing import Any, Optional' is identified as Stdlib.
+./tools/sequential_thinking_tool.py:16:1: I201 Missing newline between import groups. 'from .base import LLMTool, ToolImplOutput' is identified as Application Relative and 'from llm.message_history import MessageHistory' is identified as Third Party.
+./tools/slide_deck_tool.py:2:1: I100 Import statements are in the wrong order. 'import subprocess' should be before 'from typing import Any, Optional'
+./tools/slide_deck_tool.py:3:1: I100 Import statements are in the wrong order. 'import os' should be before 'import subprocess'
+./tools/slide_deck_tool.py:4:1: I201 Missing newline between import groups. 'from llm.message_history import MessageHistory' is identified as Third Party and 'import os' is identified as Stdlib.
+./tools/slide_deck_tool.py:5:1: I201 Missing newline between import groups. 'from .base import LLMTool, ToolImplOutput' is identified as Application Relative and 'from llm.message_history import MessageHistory' is identified as Third Party.
+./tools/slide_deck_tool.py:6:1: I100 Import statements are in the wrong order. 'from utils.workspace_manager import WorkspaceManager' should be before 'from .base import LLMTool, ToolImplOutput' and in a different group.
+./tools/slide_deck_tool.py:6:1: I201 Missing newline between import groups. 'from utils.workspace_manager import WorkspaceManager' is identified as Third Party and 'from .base import LLMTool, ToolImplOutput' is identified as Application Relative.
+./tools/static_deploy_tool.py:2:1: I100 Import statements are in the wrong order. 'from pathlib import Path' should be before 'from typing import Any, Optional'
+./tools/static_deploy_tool.py:3:1: I100 Import statements are in the wrong order. 'import os' should be before 'from pathlib import Path'
+./tools/static_deploy_tool.py:5:1: I101 Imported names are in the wrong order. Should be LLMTool, ToolImplOutput
+./tools/static_deploy_tool.py:9:1: I100 Import statements are in the wrong order. 'from llm.message_history import MessageHistory' should be before 'from .base import ToolImplOutput, LLMTool' and in a different group.
+./tools/static_deploy_tool.py:9:1: I201 Missing newline between import groups. 'from llm.message_history import MessageHistory' is identified as Third Party and 'from .base import ToolImplOutput, LLMTool' is identified as Application Relative.
+./tools/static_deploy_tool.py:10:1: I201 Missing newline between import groups. 'from utils.workspace_manager import WorkspaceManager' is identified as Third Party and 'from llm.message_history import MessageHistory' is identified as Third Party.
+./tools/str_replace_tool.py:9:1: I100 Import statements are in the wrong order. 'from collections import defaultdict' should be before 'from pathlib import Path'
+./tools/str_replace_tool.py:10:1: I101 Imported names are in the wrong order. Should be WorkspaceManager, match_indent, match_indent_by_first_line
+./tools/str_replace_tool.py:10:1: I201 Missing newline between import groups. 'from ii_agent.utils import match_indent, match_indent_by_first_line, WorkspaceManager' is identified as Third Party and 'from collections import defaultdict' is identified as Stdlib.
+./tools/str_replace_tool.py:11:1: I100 Import statements are in the wrong order. 'from ii_agent.llm.message_history import MessageHistory' should be before 'from ii_agent.utils import match_indent, match_indent_by_first_line, WorkspaceManager'
+./tools/str_replace_tool.py:16:1: I100 Import statements are in the wrong order. 'from ii_agent.llm.base import ToolCallParameters' should be before 'from ii_agent.tools.base import LLMTool, ToolImplOutput'
+./tools/str_replace_tool.py:17:1: I100 Import statements are in the wrong order. 'from ii_agent.core.event import EventType, RealtimeEvent' should be before 'from ii_agent.llm.base import ToolCallParameters'
+./tools/str_replace_tool.py:18:1: I100 Import statements are in the wrong order. 'from asyncio import Queue' should be before 'from ii_agent.core.event import EventType, RealtimeEvent' and in a different group.
+./tools/str_replace_tool.py:18:1: I201 Missing newline between import groups. 'from asyncio import Queue' is identified as Stdlib and 'from ii_agent.core.event import EventType, RealtimeEvent' is identified as Third Party.
+./tools/str_replace_tool.py:20:1: I100 Import statements are in the wrong order. 'import logging' should be before 'from typing import Any, Literal, Optional, get_args'
+./tools/str_replace_tool_relative.py:9:1: I100 Import statements are in the wrong order. 'from collections import defaultdict' should be before 'from pathlib import Path'
+./tools/str_replace_tool_relative.py:10:1: I101 Imported names are in the wrong order. Should be WorkspaceManager, match_indent, match_indent_by_first_line
+./tools/str_replace_tool_relative.py:10:1: I201 Missing newline between import groups. 'from utils import match_indent, match_indent_by_first_line, WorkspaceManager' is identified as Third Party and 'from collections import defaultdict' is identified as Stdlib.
+./tools/str_replace_tool_relative.py:11:1: I100 Import statements are in the wrong order. 'from llm.message_history import MessageHistory' should be before 'from utils import match_indent, match_indent_by_first_line, WorkspaceManager' and in a different group.
+./tools/str_replace_tool_relative.py:11:1: I201 Missing newline between import groups. 'from llm.message_history import MessageHistory' is identified as Third Party and 'from utils import match_indent, match_indent_by_first_line, WorkspaceManager' is identified as Third Party.
+./tools/str_replace_tool_relative.py:12:1: I201 Missing newline between import groups. 'from .base import LLMTool, ToolImplOutput' is identified as Application Relative and 'from llm.message_history import MessageHistory' is identified as Third Party.
+./tools/str_replace_tool_relative.py:16:1: I100 Import statements are in the wrong order. 'from llm.base import ToolCallParameters' should be before 'from .base import LLMTool, ToolImplOutput' and in a different group.
+./tools/str_replace_tool_relative.py:16:1: I201 Missing newline between import groups. 'from llm.base import ToolCallParameters' is identified as Third Party and 'from .base import LLMTool, ToolImplOutput' is identified as Application Relative.
+./tools/str_replace_tool_relative.py:17:1: I100 Import statements are in the wrong order. 'from core.event import EventType, RealtimeEvent' should be before 'from llm.base import ToolCallParameters' and in a different group.
+./tools/str_replace_tool_relative.py:17:1: I201 Missing newline between import groups. 'from core.event import EventType, RealtimeEvent' is identified as Third Party and 'from llm.base import ToolCallParameters' is identified as Third Party.
+./tools/str_replace_tool_relative.py:18:1: I100 Import statements are in the wrong order. 'from asyncio import Queue' should be before 'from core.event import EventType, RealtimeEvent' and in a different group.
+./tools/str_replace_tool_relative.py:18:1: I201 Missing newline between import groups. 'from asyncio import Queue' is identified as Stdlib and 'from core.event import EventType, RealtimeEvent' is identified as Third Party.
+./tools/str_replace_tool_relative.py:20:1: I100 Import statements are in the wrong order. 'import logging' should be before 'from typing import Any, Literal, Optional, get_args'
+./tools/text_inspector_tool.py:2:1: I201 Missing newline between import groups. 'from ii_agent.llm.message_history import MessageHistory' is identified as Third Party and 'from typing import Any, Optional' is identified as Stdlib.
+./tools/text_inspector_tool.py:7:1: I201 Missing newline between import groups. 'from .markdown_converter import MarkdownConverter' is identified as Application Relative and 'from ii_agent.tools.base import LLMTool, ToolImplOutput' is identified as Third Party.
+./tools/text_inspector_tool.py:8:1: I100 Import statements are in the wrong order. 'from ii_agent.utils import WorkspaceManager' should be before 'from .markdown_converter import MarkdownConverter' and in a different group.
+./tools/text_inspector_tool.py:8:1: I201 Missing newline between import groups. 'from ii_agent.utils import WorkspaceManager' is identified as Third Party and 'from .markdown_converter import MarkdownConverter' is identified as Application Relative.
+./tools/tool_manager.py:2:1: I100 Import statements are in the wrong order. 'import asyncio' should be before 'import os'
+./tools/tool_manager.py:5:1: I101 Imported names are in the wrong order. Should be Any, Dict, List, Optional
+./tools/tool_manager.py:6:1: I201 Missing newline between import groups. 'from llm.base import LLMClient' is identified as Third Party and 'from typing import Optional, List, Dict, Any' is identified as Stdlib.
+./tools/tool_manager.py:9:1: I201 Missing newline between import groups. 'from .advanced_tools.image_search_tool import ImageSearchTool' is identified as Application Relative and 'from llm.token_counter import TokenCounter' is identified as Third Party.
+./tools/tool_manager.py:11:1: I101 Imported names are in the wrong order. Should be MessageHistory, ToolCallParameters
+./tools/tool_manager.py:11:1: I100 Import statements are in the wrong order. 'from llm.message_history import ToolCallParameters, MessageHistory' should be before 'from .base import LLMTool' and in a different group.
+./tools/tool_manager.py:11:1: I201 Missing newline between import groups. 'from llm.message_history import ToolCallParameters, MessageHistory' is identified as Third Party and 'from .base import LLMTool' is identified as Application Relative.
+./tools/tool_manager.py:12:1: I201 Missing newline between import groups. 'from .memory.compactify_memory import CompactifyMemoryTool' is identified as Application Relative and 'from llm.message_history import ToolCallParameters, MessageHistory' is identified as Third Party.
+./tools/tool_manager.py:14:1: I101 Imported names are in the wrong order. Should be SlideDeckCompleteTool, SlideDeckInitTool
+./tools/tool_manager.py:16:1: I100 Import statements are in the wrong order. 'from .visit_webpage_tool import VisitWebpageTool' should be before 'from .web_search_tool import WebSearchTool'
+./tools/tool_manager.py:17:1: I100 Import statements are in the wrong order. 'from .str_replace_tool_relative import StrReplaceEditorTool' should be before 'from .visit_webpage_tool import VisitWebpageTool'
+./tools/tool_manager.py:18:1: I100 Import statements are in the wrong order. 'from .static_deploy_tool import StaticDeployTool' should be before 'from .str_replace_tool_relative import StrReplaceEditorTool'
+./tools/tool_manager.py:19:1: I100 Import statements are in the wrong order. 'from .sequential_thinking_tool import SequentialThinkingTool' should be before 'from .static_deploy_tool import StaticDeployTool'
+./tools/tool_manager.py:20:1: I100 Import statements are in the wrong order. 'from .message_tool import MessageTool' should be before 'from .sequential_thinking_tool import SequentialThinkingTool'
+./tools/tool_manager.py:21:1: I100 Import statements are in the wrong order. 'from .complete_tool import CompleteTool, ReturnControlToUserTool' should be before 'from .message_tool import MessageTool'
+./tools/tool_manager.py:22:1: I100 Import statements are in the wrong order. 'from .bash_tool import create_bash_tool, create_docker_bash_tool' should be before 'from .complete_tool import CompleteTool, ReturnControlToUserTool'
+./tools/tool_manager.py:23:1: I100 Import statements are in the wrong order. 'from browser.browser import Browser' should be before 'from .bash_tool import create_bash_tool, create_docker_bash_tool' and in a different group.
+./tools/tool_manager.py:23:1: I201 Missing newline between import groups. 'from browser.browser import Browser' is identified as Third Party and 'from .bash_tool import create_bash_tool, create_docker_bash_tool' is identified as Application Relative.
+./tools/tool_manager.py:24:1: I201 Missing newline between import groups. 'from utils import WorkspaceManager' is identified as Third Party and 'from browser.browser import Browser' is identified as Third Party.
+./tools/tool_manager.py:25:1: I101 Imported names are in the wrong order. Should be BrowserClickTool, BrowserEnterTextTool, BrowserGetSelectOptionsTool, BrowserNavigationTool, BrowserOpenNewTabTool, BrowserPressKeyTool, BrowserRestartTool, BrowserScrollDownTool, BrowserScrollUpTool, BrowserSelectDropdownOptionTool, BrowserSwitchTabTool, BrowserViewTool, BrowserWaitTool
+./tools/tool_manager.py:25:1: I201 Missing newline between import groups. 'from .browser_tools import BrowserNavigationTool, BrowserRestartTool, BrowserScrollDownTool, BrowserScrollUpTool, BrowserViewTool, BrowserWaitTool, BrowserSwitchTabTool, BrowserOpenNewTabTool, BrowserClickTool, BrowserEnterTextTool, BrowserPressKeyTool, BrowserGetSelectOptionsTool, BrowserSelectDropdownOptionTool' is identified as Application Relative and 'from utils import WorkspaceManager' is identified as Third Party.
+./tools/tool_manager.py:41:1: I101 Imported names are in the wrong order. Should be AudioGenerateTool, AudioTranscribeTool
+./tools/tool_manager.py:41:1: I100 Import statements are in the wrong order. 'from .advanced_tools.audio_tool import AudioTranscribeTool, AudioGenerateTool' should be before 'from .visualizer import DisplayImageTool'
+./tools/tool_manager.py:46:1: I100 Import statements are in the wrong order. 'from .advanced_tools.image_gen_tool import ImageGenerateTool' should be before 'from .advanced_tools.video_gen_tool import VideoGenerateFromTextTool'
+./tools/utils.py:2:1: I201 Missing newline between import groups. 'from PIL import Image' is identified as Third Party and 'import base64' is identified as Stdlib.
+./tools/utils.py:3:1: I100 Import statements are in the wrong order. 'from io import BytesIO' should be before 'from PIL import Image' and in a different group.
+./tools/utils.py:3:1: I201 Missing newline between import groups. 'from io import BytesIO' is identified as Stdlib and 'from PIL import Image' is identified as Third Party.
+./tools/visit_webpage_client.py:2:1: I201 Missing newline between import groups. 'from .utils import truncate_content' is identified as Application Relative and 'import requests' is identified as Third Party.
+./tools/visit_webpage_client.py:3:1: I100 Import statements are in the wrong order. 'import os' should be before 'from .utils import truncate_content' and in a different group.
+./tools/visit_webpage_client.py:3:1: I201 Missing newline between import groups. 'import os' is identified as Stdlib and 'from .utils import truncate_content' is identified as Application Relative.
+./tools/visit_webpage_client.py:4:1: I100 Import statements are in the wrong order. 'import json' should be before 'import os'
+./tools/visit_webpage_tool.py:5:1: I100 Import statements are in the wrong order. 'from typing import Any, Optional' should be before 'from .base import LLMTool, ToolImplOutput' and in a different group.
+./tools/visit_webpage_tool.py:5:1: I201 Missing newline between import groups. 'from typing import Any, Optional' is identified as Stdlib and 'from .base import LLMTool, ToolImplOutput' is identified as Application Relative.
+./tools/visit_webpage_tool.py:6:1: I201 Missing newline between import groups. 'from llm.message_history import MessageHistory' is identified as Third Party and 'from typing import Any, Optional' is identified as Stdlib.
+./tools/visit_webpage_tool.py:7:1: I101 Imported names are in the wrong order. Should be ContentExtractionError, NetworkError, WebpageVisitException, create_visit_client
+./tools/visit_webpage_tool.py:7:1: I201 Missing newline between import groups. 'from .visit_webpage_client import create_visit_client, WebpageVisitException, ContentExtractionError, NetworkError' is identified as Application Relative and 'from llm.message_history import MessageHistory' is identified as Third Party.
+./tools/visualizer.py:8:1: I100 Import statements are in the wrong order. 'from ii_agent.llm.message_history import MessageHistory' should be before 'from ii_agent.tools.base import LLMTool, ToolImplOutput'
+./tools/visualizer.py:9:1: I201 Missing newline between import groups. 'from .utils import encode_image' is identified as Application Relative and 'from ii_agent.llm.message_history import MessageHistory' is identified as Third Party.
+./tools/visualizer.py:10:1: I100 Import statements are in the wrong order. 'from ii_agent.utils import WorkspaceManager' should be before 'from .utils import encode_image' and in a different group.
+./tools/visualizer.py:10:1: I201 Missing newline between import groups. 'from ii_agent.utils import WorkspaceManager' is identified as Third Party and 'from .utils import encode_image' is identified as Application Relative.
+./tools/web_search_client.py:3:1: I201 Missing newline between import groups. 'import requests' is identified as Third Party and 'import os' is identified as Stdlib.
+./tools/web_search_client.py:4:1: I100 Import statements are in the wrong order. 'import urllib' should be before 'import requests' and in a different group.
+./tools/web_search_client.py:4:1: I201 Missing newline between import groups. 'import urllib' is identified as Stdlib and 'import requests' is identified as Third Party.
+./tools/web_search_client.py:5:1: I201 Missing newline between import groups. 'from .utils import truncate_content' is identified as Application Relative and 'import urllib' is identified as Stdlib.
+./tools/web_search_tool.py:2:1: I201 Missing newline between import groups. 'from .base import LLMTool, ToolImplOutput' is identified as Application Relative and 'from llm.message_history import MessageHistory' is identified as Third Party.
+./tools/web_search_tool.py:7:1: I100 Import statements are in the wrong order. 'from typing import Any, Optional' should be before 'from .web_search_client import create_search_client' and in a different group.
+./tools/web_search_tool.py:7:1: I201 Missing newline between import groups. 'from typing import Any, Optional' is identified as Stdlib and 'from .web_search_client import create_search_client' is identified as Application Relative.
+./tools/youtube_transcript_tool.py:5:1: I100 Import statements are in the wrong order. 'from typing import Any, Optional' should be before 'from ii_agent.tools.base import LLMTool, ToolImplOutput' and in a different group.
+./tools/youtube_transcript_tool.py:5:1: I201 Missing newline between import groups. 'from typing import Any, Optional' is identified as Stdlib and 'from ii_agent.tools.base import LLMTool, ToolImplOutput' is identified as Third Party.
+./tools/youtube_transcript_tool.py:6:1: I201 Missing newline between import groups. 'from ii_agent.llm.message_history import MessageHistory' is identified as Third Party and 'from typing import Any, Optional' is identified as Stdlib.
+./tools/youtube_transcript_tool.py:7:1: I201 Missing newline between import groups. 'import yt_dlp' is identified as Third Party and 'from ii_agent.llm.message_history import MessageHistory' is identified as Third Party.
+./tools/youtube_transcript_tool.py:8:1: I100 Import statements are in the wrong order. 'import requests' should be before 'import yt_dlp' and in a different group.
+./tools/youtube_transcript_tool.py:8:1: I201 Missing newline between import groups. 'import requests' is identified as Third Party and 'import yt_dlp' is identified as Third Party.
+./utils.py:2:1: I100 Import statements are in the wrong order. 'import uuid' should be before 'from argparse import ArgumentParser'
+./utils.py:4:1: I201 Missing newline between import groups. 'from ii_agent.utils import WorkspaceManager' is identified as Third Party and 'from pathlib import Path' is identified as Stdlib.
+./utils/__init__.py:2:1: I100 Import statements are in the wrong order. 'from .indent_utils import match_indent, match_indent_by_first_line' should be before 'from .workspace_manager import WorkspaceManager'
+./utils/prompt_generator.py:2:1: I101 Imported names are in the wrong order. Should be List, Optional, Tuple
+./utils/prompt_generator.py:4:1: F401 'ii_agent.llm.get_client' imported but unused
+./utils/prompt_generator.py:5:1: I101 Imported names are in the wrong order. Should be LLMClient, TextPrompt, TextResult
+./ws_server.py:10:1: I100 Import statements are in the wrong order. 'import argparse' should be before 'import os'
+./ws_server.py:16:1: I101 Imported names are in the wrong order. Should be Any, Dict, List, Set
+./ws_server.py:17:1: I201 Missing newline between import groups. 'from dotenv import load_dotenv' is identified as Third Party and 'from typing import Dict, List, Set, Any' is identified as Stdlib.
+./ws_server.py:22:1: I101 Imported names are in the wrong order. Should be FastAPI, HTTPException, Request, WebSocket, WebSocketDisconnect
+./ws_server.py:22:1: I100 Import statements are in the wrong order. 'from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Request, HTTPException' should be before 'import uvicorn' and in a different group.
+./ws_server.py:22:1: I201 Missing newline between import groups. 'from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Request, HTTPException' is identified as Third Party and 'import uvicorn' is identified as Third Party.
+./ws_server.py:30:1: I202 Additional newline in a group of imports. 'from fastapi.responses import JSONResponse' is identified as Third Party and 'from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Request, HTTPException' is identified as Third Party.
+./ws_server.py:31:1: I100 Import statements are in the wrong order. 'from fastapi.middleware.cors import CORSMiddleware' should be before 'from fastapi.responses import JSONResponse'
+./ws_server.py:32:1: I100 Import statements are in the wrong order. 'import anyio' should be before 'from fastapi.middleware.cors import CORSMiddleware' and in a different group.
+./ws_server.py:32:1: I201 Missing newline between import groups. 'import anyio' is identified as Third Party and 'from fastapi.middleware.cors import CORSMiddleware' is identified as Third Party.
+./ws_server.py:33:1: I100 Import statements are in the wrong order. 'import base64' should be before 'import anyio' and in a different group.
+./ws_server.py:33:1: I201 Missing newline between import groups. 'import base64' is identified as Stdlib and 'import anyio' is identified as Third Party.
+./ws_server.py:34:1: I201 Missing newline between import groups. 'from sqlalchemy import asc, text' is identified as Third Party and 'import base64' is identified as Stdlib.
+./ws_server.py:36:1: I101 Imported names are in the wrong order. Should be EventType, RealtimeEvent
+./ws_server.py:36:1: I100 Import statements are in the wrong order. 'from ii_agent.core.event import RealtimeEvent, EventType' should be before 'from sqlalchemy import asc, text' and in a different group.
+./ws_server.py:39:1: I101 Imported names are in the wrong order. Should be create_workspace_manager_for_connection, parse_common_args
+./ws_server.py:39:1: I201 Missing newline between import groups. 'from utils import parse_common_args, create_workspace_manager_for_connection' is identified as Third Party and 'from ii_agent.utils.constants import DEFAULT_MODEL, UPLOAD_FOLDER_NAME' is identified as Third Party.
+./ws_server.py:40:1: I100 Import statements are in the wrong order. 'from ii_agent.agents.anthropic_fc import AnthropicFC' should be before 'from utils import parse_common_args, create_workspace_manager_for_connection' and in a different group.
+./ws_server.py:40:1: I201 Missing newline between import groups. 'from ii_agent.agents.anthropic_fc import AnthropicFC' is identified as Third Party and 'from utils import parse_common_args, create_workspace_manager_for_connection' is identified as Third Party.
+./ws_server.py:44:1: I100 Import statements are in the wrong order. 'from ii_agent.llm import get_client' should be before 'from ii_agent.utils import WorkspaceManager'
+./ws_server.py:47:1: I100 Import statements are in the wrong order. 'from fastapi.staticfiles import StaticFiles' should be before 'from ii_agent.utils.prompt_generator import enhance_user_prompt' and in a different group.
+./ws_server.py:50:1: I100 Import statements are in the wrong order. 'from ii_agent.llm.context_manager.amortized_forgetting import AmortizedForgettingContextManager' should be before 'from ii_agent.llm.context_manager.llm_summarizing import LLMSummarizingContextManager'
+./ws_server.py:54:1: I100 Import statements are in the wrong order. 'from ii_agent.db.manager import DatabaseManager' should be before 'from ii_agent.llm.token_counter import TokenCounter'
+./ws_server.py:56:1: I100 Import statements are in the wrong order. 'from ii_agent.prompts.system_prompt import SYSTEM_PROMPT, SYSTEM_PROMPT_WITH_SEQ_THINKING' should be before 'from ii_agent.tools import get_system_tools'
+./ws_server.py:502:5: F824 `global global_args` is unused: name is never assigned in scope

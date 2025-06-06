@@ -1,7 +1,8 @@
 import logging
-from ..base import GeneralContentBlock, TextPrompt, TextResult, LLMClient
-from .base import ContextManager
+
+from ..base import GeneralContentBlock, LLMClient, TextPrompt, TextResult
 from ..token_counter import TokenCounter
+from .base import ContextManager
 
 
 class LLMSummarizingContextManager(ContextManager):

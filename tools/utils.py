@@ -1,8 +1,8 @@
 import base64
-from PIL import Image
 from io import BytesIO
 
 import requests
+from PIL import Image
 
 MAX_LENGTH_TRUNCATE_CONTENT = 20000
 

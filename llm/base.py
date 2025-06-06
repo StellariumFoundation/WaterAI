@@ -1,16 +1,12 @@
-from abc import ABC, abstractmethod
 import json
-from dataclasses import dataclass
-from typing import Any, Tuple
-from dataclasses_json import DataClassJsonMixin
-from anthropic.types import (
-    ThinkingBlock as AnthropicThinkingBlock,
-    RedactedThinkingBlock as AnthropicRedactedThinkingBlock,
-)
-from typing import Literal
-
-
 import logging
+from abc import ABC, abstractmethod
+from dataclasses import dataclass
+from typing import Any, Literal, Tuple
+
+from anthropic.types import RedactedThinkingBlock as AnthropicRedactedThinkingBlock
+from anthropic.types import ThinkingBlock as AnthropicThinkingBlock
+from dataclasses_json import DataClassJsonMixin
 
 logging.getLogger("httpx").setLevel(logging.WARNING)
 

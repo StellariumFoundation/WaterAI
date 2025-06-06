@@ -4,9 +4,7 @@ import json
 import unittest
 from unittest.mock import Mock, patch
 
-from tools.sequential_thinking_tool import (
-    SequentialThinkingTool,
-)
+from tools.sequential_thinking_tool import SequentialThinkingTool
 
 
 class TestSequentialThinkingTool(unittest.TestCase):

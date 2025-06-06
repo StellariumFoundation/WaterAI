@@ -6,54 +6,49 @@ This script provides a WebSocket interface for interacting with the Agent,
 allowing real-time communication with a frontend application.
 """
 
-import os
 import argparse
 import asyncio
+import base64  # Moved here
 import json
 import logging
+import os
 import uuid
 from pathlib import Path
-from typing import Dict, List, Set, Any
-from dotenv import load_dotenv
+from typing import Any, Dict, List, Set
 
-load_dotenv()
-
-import uvicorn
-from fastapi import (
-    FastAPI,
-    WebSocket,
-    WebSocketDisconnect,
-    Request,
-    HTTPException,
-)
-
-from fastapi.responses import JSONResponse
-from fastapi.middleware.cors import CORSMiddleware
 import anyio
-import base64
-from sqlalchemy import asc, text
-
-from ii_agent.core.event import RealtimeEvent, EventType
-from ii_agent.db.models import Event
-from ii_agent.utils.constants import DEFAULT_MODEL, UPLOAD_FOLDER_NAME
-from utils import parse_common_args, create_workspace_manager_for_connection
+import uvicorn
+from dotenv import load_dotenv  # Moved here
+from fastapi import FastAPI, HTTPException, Request, WebSocket, WebSocketDisconnect
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
 from ii_agent.agents.anthropic_fc import AnthropicFC
 from ii_agent.agents.base import BaseAgent
-from ii_agent.llm.base import LLMClient
-from ii_agent.utils import WorkspaceManager
+from ii_agent.core.event import EventType, RealtimeEvent
+from ii_agent.db.manager import DatabaseManager
+from ii_agent.db.models import Event
 from ii_agent.llm import get_client
-from ii_agent.utils.prompt_generator import enhance_user_prompt
-
-from fastapi.staticfiles import StaticFiles
-
-from ii_agent.llm.context_manager.llm_summarizing import LLMSummarizingContextManager
+from ii_agent.llm.base import LLMClient
 from ii_agent.llm.context_manager.amortized_forgetting import (
     AmortizedForgettingContextManager,
 )
+from ii_agent.llm.context_manager.llm_summarizing import LLMSummarizingContextManager
 from ii_agent.llm.token_counter import TokenCounter
-from ii_agent.db.manager import DatabaseManager
+from ii_agent.prompts.system_prompt import (
+    SYSTEM_PROMPT,
+    SYSTEM_PROMPT_WITH_SEQ_THINKING,
+)
 from ii_agent.tools import get_system_tools
-from ii_agent.prompts.system_prompt import SYSTEM_PROMPT, SYSTEM_PROMPT_WITH_SEQ_THINKING
+from ii_agent.utils import WorkspaceManager
+from ii_agent.utils.constants import DEFAULT_MODEL, UPLOAD_FOLDER_NAME
+from ii_agent.utils.prompt_generator import enhance_user_prompt
+from sqlalchemy import asc, text  # Moved here
+
+from common_args_utils import create_workspace_manager_for_connection, parse_common_args
+
+# sqlalchemy import was moved up
+
 
 MAX_OUTPUT_TOKENS_PER_TURN = 32000
 MAX_TURNS = 200
@@ -87,6 +82,8 @@ message_processors: Dict[WebSocket, asyncio.Task] = {}
 
 # Store global args for use in endpoint
 global_args = None
+
+load_dotenv() # Moved here
 
 
 def map_model_name_to_client(model_name: str, ws_content: Dict[str, Any]) -> LLMClient:
@@ -499,7 +496,7 @@ def create_agent_for_connection(
     tool_args: Dict[str, Any],
 ):
     """Create a new agent instance for a websocket connection."""
-    global global_args
+    # global global_args # Removed
     device_id = websocket.query_params.get("device_id")
     # Setup logging
     logger_for_agent_logs = logging.getLogger(f"agent_logs_{id(websocket)}")

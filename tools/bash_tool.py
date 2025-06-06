@@ -8,14 +8,15 @@ It provides a simple interface for running shell commands and getting their outp
 It also supports command filters for transforming commands before execution.
 """
 
+import re
+from abc import ABC, abstractmethod
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 import pexpect
-import re
-from abc import ABC, abstractmethod
 
 from llm.message_history import MessageHistory
+
 from .base import LLMTool, ToolImplOutput
 
 
@@ -69,7 +70,6 @@ class CommandFilter(ABC):
         Returns:
             The transformed command
         """
-        pass
 
 
 class SSHCommandFilter(CommandFilter):

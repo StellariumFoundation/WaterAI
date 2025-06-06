@@ -1,25 +1,24 @@
-import requests
-from .utils import truncate_content
-import os
 import json
+import os
+
+import requests
+
+from .utils import truncate_content
 
 
 class WebpageVisitException(Exception):
     """Base exception for webpage visit errors"""
 
-    pass
 
 
 class ContentExtractionError(WebpageVisitException):
     """Raised when content cannot be extracted from the webpage"""
 
-    pass
 
 
 class NetworkError(WebpageVisitException):
     """Raised when there are network-related errors"""
 
-    pass
 
 
 class BaseVisitClient:
@@ -39,6 +38,7 @@ class MarkdownifyVisitClient(BaseVisitClient):
     def forward(self, url: str) -> str:
         try:
             import re
+
             import requests
             from markdownify import markdownify
             from requests.exceptions import RequestException

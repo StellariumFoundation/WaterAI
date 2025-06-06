@@ -5,19 +5,17 @@ https://www.anthropic.com/engineering/swe-bench-sonnet.
 """
 
 import asyncio
-from pathlib import Path
-from collections import defaultdict
-from ii_agent.utils import match_indent, match_indent_by_first_line, WorkspaceManager
-from ii_agent.llm.message_history import MessageHistory
-from ii_agent.tools.base import (
-    LLMTool,
-    ToolImplOutput,
-)
-from ii_agent.llm.base import ToolCallParameters
-from ii_agent.core.event import EventType, RealtimeEvent
-from asyncio import Queue
-from typing import Any, Literal, Optional, get_args
 import logging
+from asyncio import Queue
+from collections import defaultdict
+from pathlib import Path
+from typing import Any, Literal, Optional, get_args
+
+from ii_agent.core.event import EventType, RealtimeEvent
+from ii_agent.llm.base import ToolCallParameters
+from ii_agent.llm.message_history import MessageHistory
+from ii_agent.tools.base import LLMTool, ToolImplOutput
+from ii_agent.utils import WorkspaceManager, match_indent, match_indent_by_first_line
 
 logger = logging.getLogger(__name__)
 

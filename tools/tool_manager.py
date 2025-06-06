@@ -1,52 +1,51 @@
-import os
 import asyncio
 import logging
+import os
 from copy import deepcopy
-from typing import Optional, List, Dict, Any
+from typing import Any, Dict, List, Optional
+
+from browser.browser import Browser
 from llm.base import LLMClient
 from llm.context_manager.llm_summarizing import LLMSummarizingContextManager
+from llm.message_history import MessageHistory, ToolCallParameters
 from llm.token_counter import TokenCounter
-from .advanced_tools.image_search_tool import ImageSearchTool
-from .base import LLMTool
-from llm.message_history import ToolCallParameters, MessageHistory
-from .memory.compactify_memory import CompactifyMemoryTool
-from .memory.simple_memory import SimpleMemoryTool
-from .slide_deck_tool import SlideDeckInitTool, SlideDeckCompleteTool
-from .web_search_tool import WebSearchTool
-from .visit_webpage_tool import VisitWebpageTool
-from .str_replace_tool_relative import StrReplaceEditorTool
-from .static_deploy_tool import StaticDeployTool
-from .sequential_thinking_tool import SequentialThinkingTool
-from .message_tool import MessageTool
-from .complete_tool import CompleteTool, ReturnControlToUserTool
-from .bash_tool import create_bash_tool, create_docker_bash_tool
-from browser.browser import Browser
 from utils import WorkspaceManager
+
+from .advanced_tools.audio_tool import AudioGenerateTool, AudioTranscribeTool
+from .advanced_tools.image_gen_tool import ImageGenerateTool
+from .advanced_tools.image_search_tool import ImageSearchTool
+from .advanced_tools.pdf_tool import PdfTextExtractTool
+from .advanced_tools.video_gen_tool import VideoGenerateFromTextTool
+from .base import LLMTool
+from .bash_tool import create_bash_tool, create_docker_bash_tool
 from .browser_tools import (
+    BrowserClickTool,
+    BrowserEnterTextTool,
+    BrowserGetSelectOptionsTool,
     BrowserNavigationTool,
+    BrowserOpenNewTabTool,
+    BrowserPressKeyTool,
     BrowserRestartTool,
     BrowserScrollDownTool,
     BrowserScrollUpTool,
+    BrowserSelectDropdownOptionTool,
+    BrowserSwitchTabTool,
     BrowserViewTool,
     BrowserWaitTool,
-    BrowserSwitchTabTool,
-    BrowserOpenNewTabTool,
-    BrowserClickTool,
-    BrowserEnterTextTool,
-    BrowserPressKeyTool,
-    BrowserGetSelectOptionsTool,
-    BrowserSelectDropdownOptionTool,
 )
-from .visualizer import DisplayImageTool
-from .advanced_tools.audio_tool import (
-    AudioTranscribeTool,
-    AudioGenerateTool,
-)
-from .advanced_tools.video_gen_tool import VideoGenerateFromTextTool
-from .advanced_tools.image_gen_tool import ImageGenerateTool
-from .advanced_tools.pdf_tool import PdfTextExtractTool
+from .complete_tool import CompleteTool, ReturnControlToUserTool
 from .deep_research_tool import DeepResearchTool
 from .list_html_links_tool import ListHtmlLinksTool
+from .memory.compactify_memory import CompactifyMemoryTool
+from .memory.simple_memory import SimpleMemoryTool
+from .message_tool import MessageTool
+from .sequential_thinking_tool import SequentialThinkingTool
+from .slide_deck_tool import SlideDeckCompleteTool, SlideDeckInitTool
+from .static_deploy_tool import StaticDeployTool
+from .str_replace_tool_relative import StrReplaceEditorTool
+from .visit_webpage_tool import VisitWebpageTool
+from .visualizer import DisplayImageTool
+from .web_search_tool import WebSearchTool
 
 
 def get_system_tools(

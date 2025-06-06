@@ -1,0 +1,4 @@
+[flake8]
+import-order-style = google
+application-import-names = actions,agents,browser,core,db,llm,prompts,run_gaia,tests,tools,utils,ws_server
+ignore = I100, I101, I202

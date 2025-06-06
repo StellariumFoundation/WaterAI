@@ -1,37 +1,31 @@
 """LLM client for Anthropic models."""
 
 import json
+import logging
 import os
 import random
 import time
 from typing import Any, Tuple, cast
+
 import openai
-import logging
-
-logger = logging.getLogger(__name__)
-
-from openai import (
-    APIConnectionError as OpenAI_APIConnectionError,
-)
-from openai import (
-    InternalServerError as OpenAI_InternalServerError,
-)
-from openai import (
-    RateLimitError as OpenAI_RateLimitError,
-)
+from openai import APIConnectionError as OpenAI_APIConnectionError
+from openai import InternalServerError as OpenAI_InternalServerError
+from openai import RateLimitError as OpenAI_RateLimitError
 from openai._types import (
     NOT_GIVEN as OpenAI_NOT_GIVEN,  # pyright: ignore[reportPrivateImportUsage]
 )
 
+logger = logging.getLogger(__name__)
+
 from .base import (
-    LLMClient,
     AssistantContentBlock,
+    LLMClient,
     LLMMessages,
-    ToolParam,
     TextPrompt,
-    ToolCall,
     TextResult,
+    ToolCall,
     ToolFormattedResult,
+    ToolParam,
 )
 
 
@@ -217,6 +211,7 @@ class OpenAIDirectClient(LLMClient):
                     tools=openai_tools if len(openai_tools) > 0 else OpenAI_NOT_GIVEN,
                     tool_choice=tool_choice_param,
                     max_tokens=openai_max_tokens,
+                    temperature=openai_temperature,
                     extra_body=extra_body,
                 )
                 break

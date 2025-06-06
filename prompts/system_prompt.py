@@ -1,6 +1,5 @@
-from datetime import datetime
 import platform
-
+from datetime import datetime
 
 SYSTEM_PROMPT = f"""\
 You are II Agent, an advanced AI assistant created by the II team.

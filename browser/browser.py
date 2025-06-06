@@ -7,18 +7,10 @@ import logging
 from dataclasses import dataclass, field
 from importlib import resources
 from typing import Any, Optional
-from playwright.async_api import (
-    Browser as PlaywrightBrowser,
-)
-from playwright.async_api import (
-    BrowserContext as PlaywrightBrowserContext,
-)
-from playwright.async_api import (
-    Page,
-    Playwright,
-    StorageState,
-    async_playwright,
-)
+
+from playwright.async_api import Browser as PlaywrightBrowser
+from playwright.async_api import BrowserContext as PlaywrightBrowserContext
+from playwright.async_api import Page, Playwright, StorageState, async_playwright
 from tenacity import (
     retry,
     retry_if_exception_type,
@@ -29,17 +21,12 @@ from typing_extensions import TypedDict  # to account for older python versions
 
 # Import detector class
 from .detector import Detector
-from .models import (
-    BrowserError,
-    BrowserState,
-    InteractiveElementsData,
-    TabInfo,
-)
+from .models import BrowserError, BrowserState, InteractiveElementsData, TabInfo
 from .utils import (
     filter_elements,
+    is_pdf_url,
     put_highlight_elements_on_screenshot,
     scale_b64_image,
-    is_pdf_url,
 )
 
 logger = logging.getLogger(__name__)
