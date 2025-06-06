@@ -58,3 +58,4 @@ referencing
 rpds-py
 jsonschema-specifications
 ptyprocess
+pyee
