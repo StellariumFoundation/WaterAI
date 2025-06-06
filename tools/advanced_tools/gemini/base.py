@@ -2,10 +2,10 @@ import os
 
 from typing import Optional
 from google import genai
-from ii_agent.tools.base import (
+from tools.base import (
     LLMTool,
 )
-from ii_agent.utils import WorkspaceManager
+from utils import WorkspaceManager
 
 
 DEFAULT_MODEL = "gemini-2.5-pro-preview-05-06"
