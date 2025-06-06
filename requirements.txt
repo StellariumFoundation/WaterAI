@@ -76,3 +76,4 @@ PyMuPDF
 tavily-python
 duckduckgo-search
 yt-dlp
+google-cloud-core
